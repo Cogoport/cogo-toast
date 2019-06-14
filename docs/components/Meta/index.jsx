@@ -42,7 +42,7 @@ const Meta = () => (
 		<meta
 			key="description"
 			name="description"
-			content="Open Source, Plug and Play - Toast Messages System for React. ~ 3.5K Gzipped (All Inclusive of Icons, Styles, and Code) No configuration required."
+			content="Open Source, Plug and Play - Toast Messages System for React. ~ 4K Gzipped (All Inclusive of Icons, Styles, and Code) No configuration required."
 		/>
 
 		<meta
@@ -64,7 +64,7 @@ const Meta = () => (
 		<meta
 			key="og:description"
 			name="og:description"
-			content="Open Source, Plug and Play - Toast Messages System for React. ~ 3.5K Gzipped (All Inclusive of Icons, Styles, and Code) No configuration required."
+			content="Open Source, Plug and Play - Toast Messages System for React. ~ 4K Gzipped (All Inclusive of Icons, Styles, and Code) No configuration required."
 		/>
 
 		<meta key="og:url" property="og:url" content="https://cogoport.github.io/cogo-toast" />

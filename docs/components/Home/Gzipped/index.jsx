@@ -7,12 +7,12 @@ import Button from '../../../common-util/button';
 import Section from './styles';
 
 const Types = () => (
-	<CodePanel heading="Only ~ 3.5K Gzipped">
+	<CodePanel heading="Only ~ 4K Gzipped">
 		<Section>
 			<Paragraph>
-				The package contains one single minified build file, and its all inclusive!
+				The package contains the minified build file, along with the SVG Icons and the Styles, built
+				into the Code, with a total of ~4K Gzipped
 			</Paragraph>
-			<Paragraph>The SVG Icons and the Styles are packed along built into the Code.</Paragraph>
 		</Section>
 		<Section>
 			<a href="https://github.com/Cogoport/cogo-toast" target="_blank" rel="noopener">

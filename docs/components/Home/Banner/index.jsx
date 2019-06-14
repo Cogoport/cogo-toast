@@ -18,7 +18,7 @@ const Hero = () => (
 		</Section>
 		<Section>
 			<Paragraph>- Plug &amp; Play. No configuration required</Paragraph>
-			<Paragraph>~ 3.5K Gzipped (All Inclusive of Icons, Styles, &amp; Code)</Paragraph>
+			<Paragraph>~ 4K Gzipped (All Inclusive of Icons, Styles, &amp; Code)</Paragraph>
 			<Paragraph>- Completely Customizable</Paragraph>
 			<Paragraph>- Built with React</Paragraph>
 		</Section>
