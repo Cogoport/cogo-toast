@@ -42,7 +42,7 @@ const Meta = () => (
 		<meta
 			key="description"
 			name="description"
-			content="Open Source, Plug and Play - Toast Messages System for React. ~ 4.2K Gzipped (All Inclusive of Icons, Styles, and Code) No configuration required."
+			content="Open Source, Plug and Play - Toast Messages System for React. ~ 4K Gzipped (All Inclusive of Icons, Styles, and Code) No configuration required."
 		/>
 
 		<meta
