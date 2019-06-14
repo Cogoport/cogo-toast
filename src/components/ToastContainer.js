@@ -45,11 +45,9 @@ const ToastContainer = ({ toast, hiddenID }) => {
 				<div key={`row_${row}`} className="ct-row">
 					{groups.map((group) => {
 						const type = `${row}${group}`;
+						const className = ['ct-group', row === 'bottom' ? 'ct-flex-bottom' : ''].join(' ');
 						return (
-							<div
-								key={type}
-								className={['ct-group', row === 'bottom' ? 'ct-flex-bottom' : ''].join(' ')}
-							>
+							<div key={type} className={className}>
 								{allToasts[type].map(item => (
 									<Toast
 										key={`${type}_${item.id}`}
