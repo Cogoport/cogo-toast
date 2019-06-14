@@ -4,9 +4,12 @@
 
   - Major internal rewrite to remove ReactDOMServer dependency.
 
-	- Using react hooks internally, so support for React versions before hooks is now dropped.
-  
-	- `icon` option changed to `renderIcon`, where you can pass a render function instead of a node. (Useful for Lazy Rendering)
+  - Using react hooks internally, so support for React versions before hooks is now dropped. Use `v2.0.1` if you want to use this library in versions before React@16.8 (pre-hooks)
+
+  **Breaking:**
+
+  - `icon` option changed to `renderIcon`, where you can pass a render function instead of a node. (Useful for Lazy Rendering)
+  - Export for `create` function removed. `cogoToast()` works like create did before.
 
 - v2.0.1
 
