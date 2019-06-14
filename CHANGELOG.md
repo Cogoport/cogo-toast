@@ -1,5 +1,13 @@
 ### Features
 
+- v3.0.0
+
+  - Major internal rewrite to remove ReactDOMServer dependency.
+
+	- Using react hooks internally, so support for React versions before hooks is now dropped.
+  
+	- `icon` option changed to `renderIcon`, where you can pass a render function instead of a node. (Useful for Lazy Rendering)
+
 - v2.0.1
 
   - Fix for top level typings declaration

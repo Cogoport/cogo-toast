@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-	string, number, bool, func, shape, oneOfType,
+	string, number, bool, node, func, shape, oneOfType,
 } from 'prop-types';
 
 import Icons from './Icons';
@@ -16,7 +16,7 @@ const colors = {
 const Toast = ({
 	id,
 	type,
-	text,
+	children,
 	heading,
 	show,
 	onHide,
@@ -25,6 +25,7 @@ const Toast = ({
 	renderIcon,
 	bar = {},
 	onClick,
+	...props
 }) => {
 	const place = (position || 'top-center').includes('bottom') ? 'Bottom' : 'Top';
 	const marginType = `margin${place}`;
@@ -81,22 +82,22 @@ const Toast = ({
 	};
 
 	return (
-		<div className={className} style={style} {...(onClick ? clickProps : {})}>
+		<div className={className} style={style} {...(onClick ? clickProps : {})} {...props}>
 			{renderIcon ? renderIcon() : <CurrentIcon />}
 			<div className={heading ? 'ct-text-group-heading' : 'ct-text-group'}>
 				{heading && <h4 className="ct-heading">{heading}</h4>}
-				<div className="ct-text">{text}</div>
+				<div className="ct-text">{children}</div>
 			</div>
 		</div>
 	);
 };
 
 Toast.propTypes = {
-	id: oneOfType([string, number]),
 	type: string.isRequired,
-	text: string.isRequired,
+	children: oneOfType([string, node]).isRequired,
 	show: bool,
 	onHide: func,
+	id: oneOfType([string, number]),
 	hideAfter: number,
 	heading: string,
 	position: string,

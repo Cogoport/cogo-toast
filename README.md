@@ -23,6 +23,16 @@ Install via Yarn:
 yarn add cogo-toast
 ```
 
+#### Note:
+
+The latest version `^3.0.0` makes the use of React Hooks internally.
+
+To use this package in projects that don't support hooks, use `v2.0.1` instead.
+
+```bash
+yarn add cogo-toast@2.0.1
+```
+
 ## Usage
 
 Its Plug and Play. No configuration required. Just import and you are good to go.
@@ -75,14 +85,14 @@ cogoToast.info('This is an info message', options);
 
 Here's a list of all the available options, to customize the toast to your needs.
 
-|  Options  |                                               Type                                               |                           Default                            |
-| :-------: | :----------------------------------------------------------------------------------------------: | :----------------------------------------------------------: |
-| hideAfter |                                        Number in Seconds                                         | `3.5` <br />(Can be `0` to disable auto-hiding of the toast) |
-| position  | `'top-left', 'top-center', 'top-right',` <br /> `'bottom-left', 'bottom-center', 'bottom-right'` |                        `'top-center'`                        |
-|  heading  |                                              String                                              |                             `''`                             |
-|   icon    |                                            ReactNode                                             |                    Icon Based on the Type                    |
-|    bar    |           Object <br /> `{ size: '2px', style: 'solid/dashed/dotted', color: '#hex' }`           |                      Based on the Type                       |
-|  onClick  |                                             Function                                             |                            `null`                            |
+|  Options   |                                               Type                                               |                          Default                           |
+| :--------: | :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------: |
+| hideAfter  |                                        Number in Seconds                                         | `3` <br />(Can be `0` to disable auto-hiding of the toast) |
+|  position  | `'top-left', 'top-center', 'top-right',` <br /> `'bottom-left', 'bottom-center', 'bottom-right'` |                       `'top-center'`                       |
+|  heading   |                                              String                                              |                            `''`                            |
+| renderIcon |                                       Function<ReactNode>                                        |                   Icon Based on the Type                   |
+|    bar     |           Object <br /> `{ size: '2px', style: 'solid/dashed/dotted', color: '#hex' }`           |                     Based on the Type                      |
+|  onClick   |                                             Function                                             |                           `null`                           |
 
 #### Custom Styling
 

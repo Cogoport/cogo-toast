@@ -11,8 +11,8 @@
 	},
 	"dependencies": {
 		"@emotion/core": "10.0.10",
-		"@emotion/styled": "10.0.11",
-		"babel-plugin-emotion": "10.0.9",
+		"@emotion/styled": "10.0.12",
+		"babel-plugin-emotion": "10.0.13",
 		"cogo-toast": "link:../",
 		"next": "^8.1.0",
 		"react": "^16.8.6",
