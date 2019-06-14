@@ -11,8 +11,7 @@
 	pointer-events: none;
 }
 
-#ct-top,
-#ct-bottom {
+.ct-row {
 	display: flex;
 	justify-content: space-between;
 }

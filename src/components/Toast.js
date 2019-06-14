@@ -22,7 +22,8 @@ const Toast = ({
 	position,
 	renderIcon,
 	bar = {},
-	removeToast,
+	isHidden,
+	onHide,
 	onClick,
 }) => {
 	const place = (position || 'top-center').includes('bottom') ? 'Bottom' : 'Top';
@@ -47,14 +48,28 @@ const Toast = ({
 			setAnimStyles({ opacity: 1, [marginType]: '15px' });
 		}, 50);
 
-		setTimeout(() => {
-			setAnimStyles({ opacity: 0, [marginType]: '-15px' });
-
+		if (hideAfter !== 0) {
 			setTimeout(() => {
-				removeToast(id, position);
-			}, 300);
-		}, hideAfter * 1000 + 50);
+				setAnimStyles({ opacity: 0, [marginType]: '-15px' });
+
+				setTimeout(() => {
+					onHide(id, position);
+				}, 300);
+			}, hideAfter * 1000);
+		}
 	}, []);
+
+	useEffect(() => {
+		if (isHidden) {
+			setTimeout(() => {
+				setAnimStyles({ opacity: 0, [marginType]: '-15px' });
+
+				setTimeout(() => {
+					onHide(id, position);
+				}, 300);
+			}, hideAfter * 1000);
+		}
+	}, [isHidden]);
 
 	const clickProps = {
 		tabIndex: 0,

@@ -5,6 +5,8 @@ import ToastContainer from './components/ToastContainer';
 
 import './styles/styles.css';
 
+let ctToastCount = 0;
+
 const cogoToast = (text, options) => {
 	let rootContainer = document.getElementById('ct-container');
 
@@ -14,7 +16,25 @@ const cogoToast = (text, options) => {
 		document.body.append(rootContainer);
 	}
 
-	ReactDOM.render(<ToastContainer toast={{ text, ...options }} />, rootContainer);
+	ctToastCount += 1;
+
+	const hideTime = (options.hideAfter === undefined ? 3 : options.hideAfter) * 1000;
+
+	const toast = { id: ctToastCount, text, ...options };
+
+	ReactDOM.render(<ToastContainer toast={toast} />, rootContainer);
+
+	const hide = () => {
+		ReactDOM.render(<ToastContainer hiddenID={toast.id} />, rootContainer);
+	};
+
+	const completePromise = new Promise((resolve) => {
+		setTimeout(() => {
+			resolve();
+		}, hideTime);
+	});
+
+	return hideTime <= 0 ? hide : completePromise;
 };
 
 const types = ['success', 'info', 'warn', 'error', 'loading'];

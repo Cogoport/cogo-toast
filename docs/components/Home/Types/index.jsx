@@ -8,6 +8,7 @@ import Section from './styles';
 const types = ['success', 'info', 'loading', 'warn', 'error'];
 
 const showMessage = type => cogoToast[type](`This is a ${type} message.`);
+
 const showAll = () => types.forEach(type => showMessage(type));
 
 const codeBlock = (
