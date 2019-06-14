@@ -13,33 +13,20 @@ const colors = {
 	loading: '#0088ff',
 };
 
-const Toast = ({
-	id,
-	type,
-	text,
-	heading,
-	show,
-	onHide,
-	hideAfter,
-	position,
-	renderIcon,
-	bar = {},
-	onClick,
-	...props
-}) => {
-	const place = (position || 'top-center').includes('bottom') ? 'Bottom' : 'Top';
+const Toast = (props) => {
+	const place = (props.position || 'top-center').includes('bottom') ? 'Bottom' : 'Top';
 	const marginType = `margin${place}`;
 
-	const className = ['ct-toast', onClick ? ' ct-cursor-pointer' : ''].join(' ');
-	const borderLeft = `${bar.size || '3px'} ${bar.style || 'solid'} ${bar.color || colors[type]}`;
+	const className = ['ct-toast', props.onClick ? ' ct-cursor-pointer' : ''].join(' ');
+	const borderLeft = `${props.bar.size || '3px'} ${props.bar.style || 'solid'} ${props.bar.color || colors[type]}`;
 
-	const CurrentIcon = Icons[type];
+	const CurrentIcon = Icons[props.type];
 
 	const [animStyles, setAnimStyles] = useState({ opacity: 0, [marginType]: -15 });
 
 	const style = {
-		paddingLeft: heading ? 25 : undefined,
-		minHeight: heading ? 50 : undefined,
+		paddingLeft: props.heading ? 25 : undefined,
+		minHeight: props.heading ? 50 : undefined,
 		borderLeft,
 		...animStyles,
 	};
@@ -49,9 +36,9 @@ const Toast = ({
 			setAnimStyles({ opacity: 0, [marginType]: '-15px' });
 
 			setTimeout(() => {
-				onHide(id, position);
+				props.onHide(props.id, props.position);
 			}, 300);
-		}, hideAfter * 1000);
+		}, props.hideAfter * 1000);
 	};
 
 	useEffect(() => {
@@ -59,34 +46,34 @@ const Toast = ({
 			setAnimStyles({ opacity: 1, [marginType]: '15px' });
 		}, 50);
 
-		if (hideAfter !== 0) {
+		if (props.hideAfter !== 0) {
 			handleHide();
 		}
 	}, []);
 
 	useEffect(() => {
-		if (!show) {
+		if (!props.show) {
 			handleHide();
 		}
-	}, [show]);
+	}, [props.show]);
 
 	const clickProps = {
 		tabIndex: 0,
-		onClick,
+		onClick: props.onClick,
 		role: 'button',
 		onKeyPress: (event) => {
 			if (event.keyCode === 13) {
-				onClick();
+				props.onClick();
 			}
 		},
 	};
 
 	return (
-		<div className={className} style={style} {...(onClick ? clickProps : {})} {...props}>
-			{renderIcon ? renderIcon() : <CurrentIcon />}
-			<div className={heading ? 'ct-text-group-heading' : 'ct-text-group'}>
-				{heading && <h4 className="ct-heading">{heading}</h4>}
-				<div className="ct-text">{text}</div>
+		<div className={className} style={style} {...(props.onClick ? clickProps : {})} {...props}>
+			{props.renderIcon ? props.renderIcon() : <CurrentIcon />}
+			<div className={props.heading ? 'ct-text-group-heading' : 'ct-text-group'}>
+				{props.heading && <h4 className="ct-heading">{props.heading}</h4>}
+				<div className="ct-text">{props.text}</div>
 			</div>
 		</div>
 	);

@@ -13,6 +13,7 @@
 		"import/prefer-default-export": "off",
 		"import/no-extraneous-dependencies": "off",
 		"indent": ["warn", "tab", { "SwitchCase": 1 }],
+		"react/destructuring-assignment": "off",
 		"react/jsx-indent": ["error", "tab"],
 		"react/jsx-indent-props": ["error", "tab"],
 		"react/no-array-index-key": "warn",

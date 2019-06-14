@@ -14,17 +14,17 @@ const defaultToasts = {
 	bottomRight: [],
 };
 
-const ToastContainer = ({ toast, hiddenID }) => {
+const ToastContainer = (props) => {
 	const [allToasts, setToasts] = useState(defaultToasts);
 
 	useEffect(() => {
-		if (toast) {
+		if (props.toast) {
 			setToasts((prevToasts) => {
-				const position = camelCase(toast.position || 'top-center');
-				return { ...prevToasts, [position]: [...prevToasts[position], toast] };
+				const position = camelCase(props.toast.position || 'top-center');
+				return { ...prevToasts, [position]: [...prevToasts[position], props.toast] };
 			});
 		}
-	}, [toast]);
+	}, [props.toast]);
 
 	const handleRemove = (id, position) => {
 		setToasts((prevToasts) => {
@@ -52,7 +52,7 @@ const ToastContainer = ({ toast, hiddenID }) => {
 									<Toast
 										key={`${type}_${item.id}`}
 										{...item}
-										show={hiddenID !== item.id}
+										show={props.hiddenID !== item.id}
 										onHide={handleRemove}
 									/>
 								))}
