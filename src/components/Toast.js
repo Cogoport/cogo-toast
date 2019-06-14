@@ -18,7 +18,8 @@ const Toast = (props) => {
 	const marginType = `margin${place}`;
 
 	const className = ['ct-toast', props.onClick ? ' ct-cursor-pointer' : ''].join(' ');
-	const borderLeft = `${props.bar.size || '3px'} ${props.bar.style || 'solid'} ${props.bar.color || colors[type]}`;
+	const borderLeft = `${props.bar.size || '3px'} ${props.bar.style || 'solid'} ${props.bar.color
+		|| colors[props.type]}`;
 
 	const CurrentIcon = Icons[props.type];
 
@@ -69,7 +70,7 @@ const Toast = (props) => {
 	};
 
 	return (
-		<div className={className} style={style} {...(props.onClick ? clickProps : {})} {...props}>
+		<div className={className} style={style} {...(props.onClick ? clickProps : {})}>
 			{props.renderIcon ? props.renderIcon() : <CurrentIcon />}
 			<div className={props.heading ? 'ct-text-group-heading' : 'ct-text-group'}>
 				{props.heading && <h4 className="ct-heading">{props.heading}</h4>}

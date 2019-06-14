@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import ToastContainer from './components/ToastContainer';
+import Toast from './components/Toast';
 
 import './styles/styles.css';
 
@@ -41,5 +42,7 @@ const types = ['success', 'info', 'warn', 'error', 'loading'];
 types.forEach((type) => {
 	cogoToast[type] = (text, options) => cogoToast(text, { ...options, type });
 });
+
+export { Toast };
 
 export default cogoToast;

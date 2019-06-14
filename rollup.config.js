@@ -8,19 +8,39 @@ import svgr from '@svgr/rollup';
 
 import pkg from './package.json';
 
-export default {
-	input: 'src/index.js',
-	output: [
-		{ file: pkg.main, format: 'cjs', sourcemap: false },
-		{ file: pkg.module, format: 'es', sourcemap: false },
-	],
-	plugins: [
-		external(),
-		postcss({}),
-		url({ exclude: ['**/*.svg'] }),
-		svgr(),
-		babel({ exclude: 'node_modules/**' }),
-		resolve(),
-		commonjs(),
-	],
-};
+export default [
+	{
+		input: 'src/index.js',
+		output: [
+			{
+				file: pkg.main,
+				format: 'cjs',
+				sourcemap: false,
+				exports: 'named',
+				globals: {
+					react: 'React',
+					'react-dom': 'ReactDOM',
+				},
+			},
+			{
+				file: pkg.module,
+				format: 'es',
+				sourcemap: false,
+				exports: 'named',
+				globals: {
+					react: 'React',
+					'react-dom': 'ReactDOM',
+				},
+			},
+		],
+		plugins: [
+			external(),
+			postcss({}),
+			url({ exclude: ['**/*.svg'] }),
+			svgr(),
+			babel({ exclude: 'node_modules/**' }),
+			resolve(),
+			commonjs(),
+		],
+	},
+];
