@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	string, number, func, shape,
 } from 'prop-types';
@@ -14,23 +14,47 @@ const colors = {
 };
 
 const Toast = ({
-	type, text, heading, hideAfter, position, renderIcon, bar = {}, onClick,
+	id,
+	type,
+	text,
+	heading,
+	hideAfter,
+	position,
+	renderIcon,
+	bar = {},
+	removeToast,
+	onClick,
 }) => {
-	const CurrentIcon = Icons[type];
+	const place = (position || 'top-center').includes('bottom') ? 'Bottom' : 'Top';
+	const marginType = `margin${place}`;
 
 	const className = ['ct-toast', onClick ? ' ct-cursor-pointer' : ''].join(' ');
-
-	const place = (position || 'top-center').includes('bottom') ? 'Bottom' : 'Top';
-
 	const borderLeft = `${bar.size || '3px'} ${bar.style || 'solid'} ${bar.color || colors[type]}`;
-	const marginType = `margin${place}`;
+
+	const CurrentIcon = Icons[type];
+
+	const [animStyles, setAnimStyles] = useState({ opacity: 0, [marginType]: -15 });
 
 	const style = {
 		paddingLeft: heading ? 25 : undefined,
 		minHeight: heading ? 50 : undefined,
 		borderLeft,
-		[marginType]: 12,
+		...animStyles,
 	};
+
+	useEffect(() => {
+		setTimeout(() => {
+			setAnimStyles({ opacity: 1, [marginType]: '15px' });
+		}, 50);
+
+		setTimeout(() => {
+			setAnimStyles({ opacity: 0, [marginType]: '-15px' });
+
+			setTimeout(() => {
+				removeToast(id, position);
+			}, 300);
+		}, hideAfter * 1000 + 50);
+	}, []);
 
 	const clickProps = {
 		tabIndex: 0,
