@@ -19,7 +19,6 @@ const cogoToast = (text, options) => {
 	ctToastCount += 1;
 
 	const hideTime = (options.hideAfter === undefined ? 3 : options.hideAfter) * 1000;
-
 	const toast = { id: ctToastCount, text, ...options };
 
 	ReactDOM.render(<ToastContainer toast={toast} />, rootContainer);

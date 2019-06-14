@@ -1,7 +1,9 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { shape, number } from 'prop-types';
 
 import Toast from './Toast';
+
+const camelCase = str => str.replace(/-([a-z])/g, g => g[1].toUpperCase());
 
 const defaultToasts = {
 	topLeft: [],
@@ -18,8 +20,7 @@ const ToastContainer = ({ toast, hiddenID }) => {
 	useEffect(() => {
 		if (toast) {
 			setToasts((prevToasts) => {
-				let position = toast.position || 'top-center';
-				position = position.replace(/-([a-z])/g, g => g[1].toUpperCase()) || 'topCenter';
+				const position = camelCase(toast.position || 'top-center');
 				return { ...prevToasts, [position]: [...prevToasts[position], toast] };
 			});
 		}
@@ -27,7 +28,7 @@ const ToastContainer = ({ toast, hiddenID }) => {
 
 	const handleRemove = (id, position) => {
 		setToasts((prevToasts) => {
-			const toastPosition =				(position || 'top-center').replace(/-([a-z])/g, g => g[1].toUpperCase()) || 'topCenter';
+			const toastPosition = camelCase(position || 'top-center');
 			return {
 				...prevToasts,
 				[toastPosition]: prevToasts[toastPosition].filter(item => item.id !== id),
@@ -35,34 +36,34 @@ const ToastContainer = ({ toast, hiddenID }) => {
 		});
 	};
 
-	const toastMapper = (type, item) => (
-		<Toast
-			key={`${type}-${item.id}`}
-			{...item}
-			isHidden={hiddenID === item.id}
-			onHide={handleRemove}
-		/>
-	);
+	const rows = ['top', 'bottom'];
+	const groups = ['Left', 'Center', 'Right'];
 
 	return (
-		<Fragment>
-			<div className="ct-row">
-				<div className="ct-group">{allToasts.topLeft.map(item => toastMapper('tl', item))}</div>
-				<div className="ct-group">{allToasts.topCenter.map(item => toastMapper('tc', item))}</div>
-				<div className="ct-group">{allToasts.topRight.map(item => toastMapper('tr', item))}</div>
-			</div>
-			<div className="ct-row">
-				<div className="ct-group ct-flex-bottom">
-					{allToasts.bottomLeft.map(item => toastMapper('bl', item))}
+		<>
+			{rows.map(row => (
+				<div key={`row_${row}`} className="ct-row">
+					{groups.map((group) => {
+						const type = `${row}${group}`;
+						return (
+							<div
+								key={type}
+								className={['ct-group', row === 'bottom' ? 'ct-flex-bottom' : ''].join(' ')}
+							>
+								{allToasts[type].map(item => (
+									<Toast
+										key={`${type}_${item.id}`}
+										{...item}
+										show={hiddenID !== item.id}
+										onHide={handleRemove}
+									/>
+								))}
+							</div>
+						);
+					})}
 				</div>
-				<div className="ct-group ct-flex-bottom">
-					{allToasts.bottomCenter.map(item => toastMapper('bc', item))}
-				</div>
-				<div className="ct-group ct-flex-bottom">
-					{allToasts.bottomRight.map(item => toastMapper('br', item))}
-				</div>
-			</div>
-		</Fragment>
+			))}
+		</>
 	);
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-	string, number, func, shape,
+	string, number, bool, func, shape, oneOfType,
 } from 'prop-types';
 
 import Icons from './Icons';
@@ -18,12 +18,12 @@ const Toast = ({
 	type,
 	text,
 	heading,
+	show,
+	onHide,
 	hideAfter,
 	position,
 	renderIcon,
 	bar = {},
-	isHidden,
-	onHide,
 	onClick,
 }) => {
 	const place = (position || 'top-center').includes('bottom') ? 'Bottom' : 'Top';
@@ -43,33 +43,31 @@ const Toast = ({
 		...animStyles,
 	};
 
+	const handleHide = () => {
+		setTimeout(() => {
+			setAnimStyles({ opacity: 0, [marginType]: '-15px' });
+
+			setTimeout(() => {
+				onHide(id, position);
+			}, 300);
+		}, hideAfter * 1000);
+	};
+
 	useEffect(() => {
 		setTimeout(() => {
 			setAnimStyles({ opacity: 1, [marginType]: '15px' });
 		}, 50);
 
 		if (hideAfter !== 0) {
-			setTimeout(() => {
-				setAnimStyles({ opacity: 0, [marginType]: '-15px' });
-
-				setTimeout(() => {
-					onHide(id, position);
-				}, 300);
-			}, hideAfter * 1000);
+			handleHide();
 		}
 	}, []);
 
 	useEffect(() => {
-		if (isHidden) {
-			setTimeout(() => {
-				setAnimStyles({ opacity: 0, [marginType]: '-15px' });
-
-				setTimeout(() => {
-					onHide(id, position);
-				}, 300);
-			}, hideAfter * 1000);
+		if (!show) {
+			handleHide();
 		}
-	}, [isHidden]);
+	}, [show]);
 
 	const clickProps = {
 		tabIndex: 0,
@@ -94,8 +92,11 @@ const Toast = ({
 };
 
 Toast.propTypes = {
+	id: oneOfType([string, number]),
 	type: string.isRequired,
 	text: string.isRequired,
+	show: bool,
+	onHide: func,
 	hideAfter: number,
 	heading: string,
 	position: string,
@@ -105,6 +106,9 @@ Toast.propTypes = {
 };
 
 Toast.defaultProps = {
+	id: null,
+	show: true,
+	onHide: null,
 	hideAfter: 3,
 	heading: null,
 	position: 'top-center',
