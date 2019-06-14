@@ -10,7 +10,7 @@ export type Options = Partial<{
 		| 'bottom-center'
 		| 'bottom-right';
 	heading: string;
-	icon: ReactNode;
+	renderIcon: Function;
 	bar: Partial<{
 		size: string;
 		style: 'solid' | 'dashed' | 'dotted';
@@ -27,11 +27,11 @@ export type Method = {
 };
 
 declare namespace cogoToast {
-	export const loading: Method;
 	export const success: Method;
-	export const error: Method;
-	export const warn: Method;
 	export const info: Method;
+	export const loading: Method;
+	export const warn: Method;
+	export const error: Method;
 }
 
 export default cogoToast;
