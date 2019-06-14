@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-	string, number, bool, node, func, shape, oneOfType,
+	string, number, bool, func, shape, oneOfType,
 } from 'prop-types';
 
 import Icons from './Icons';
@@ -16,7 +16,7 @@ const colors = {
 const Toast = ({
 	id,
 	type,
-	children,
+	text,
 	heading,
 	show,
 	onHide,
@@ -86,7 +86,7 @@ const Toast = ({
 			{renderIcon ? renderIcon() : <CurrentIcon />}
 			<div className={heading ? 'ct-text-group-heading' : 'ct-text-group'}>
 				{heading && <h4 className="ct-heading">{heading}</h4>}
-				<div className="ct-text">{children}</div>
+				<div className="ct-text">{text}</div>
 			</div>
 		</div>
 	);
@@ -94,7 +94,7 @@ const Toast = ({
 
 Toast.propTypes = {
 	type: string.isRequired,
-	children: oneOfType([string, node]).isRequired,
+	text: string.isRequired,
 	show: bool,
 	onHide: func,
 	id: oneOfType([string, number]),
