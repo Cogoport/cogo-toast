@@ -83,6 +83,16 @@ The second parameter to the function is an options object that can be passed in 
 cogoToast.info('This is an info message', options);
 ```
 
+#### Hide on Click
+
+```javascript
+cogoToast.success('This is a success message.', {
+	onClick: hide => {
+		hide();
+	},
+});
+```
+
 #### All Available Options
 
 Here's a list of all the available options, to customize the toast to your needs.
@@ -95,16 +105,6 @@ Here's a list of all the available options, to customize the toast to your needs
 |  renderIcon   |                                       Function<ReactNode>                                        |                   Icon Based on the Type                   |
 |      bar      |           Object <br /> `{ size: '2px', style: 'solid/dashed/dotted', color: '#hex' }`           |                     Based on the Type                      |
 | onClick(hide) |                                             Function                                             |                           `null`                           |
-
-#### Hide on Click
-
-```javascript
-cogoToast.success('This is a success message.', {
-	onClick: hide => {
-		hide();
-	},
-});
-```
 
 #### Custom Styling
 
