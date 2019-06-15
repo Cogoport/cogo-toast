@@ -23,7 +23,7 @@ Install via Yarn:
 yarn add cogo-toast
 ```
 
-<p align="center"><img src="docs/static/preview.png" alt="cogo-toast-preview" title="cogo-toast-preview" width="120"><p>
+<p align="center"><img src="docs/static/images/preview.png" alt="cogo-toast-preview" title="cogo-toast-preview"><p>
 
 #### Note:
 
