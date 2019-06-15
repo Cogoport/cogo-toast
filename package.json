@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"scripts": {
 		"setup": "yarn install && cd docs && yarn install",
+		"add-contributor": "all-contributors add",
 		"dev-npm": "rollup -c -w",
 		"dev-docs": "cd docs && $npm_execpath run dev",
 		"dev": "concurrently --kill-others-on-fail \"$npm_execpath run dev-npm\" \"$npm_execpath run dev-docs\"",

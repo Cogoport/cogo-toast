@@ -46,5 +46,4 @@ Please checkout the [the open issues][issues]
 Also, please watch the repo and respond to questions/bug reports/feature
 requests! Thanks!
 
-[all-contributors]: https://github.com/kentcdodds/all-contributors
 [issues]: https://github.com/Cogoport/cogo-toast/issues
