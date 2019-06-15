@@ -75,15 +75,7 @@ cogoToast.loading('Loading your data...').then(() => {
 
 When hideAfter = 0, It returns a callback function that hides the toast, instead of a promise.
 
-### Completely Customizable
-
-The second parameter to the function is an options object that can be passed in for customization.
-
-```javascript
-cogoToast.info('This is an info message', options);
-```
-
-#### Hide on Click
+### Hide on Click
 
 ```javascript
 cogoToast.success('This is a success message.', {
@@ -91,6 +83,14 @@ cogoToast.success('This is a success message.', {
 		hide();
 	},
 });
+```
+
+### Completely Customizable
+
+The second parameter to the function is an options object that can be passed in for customization.
+
+```javascript
+cogoToast.info('This is an info message', options);
 ```
 
 #### All Available Options
