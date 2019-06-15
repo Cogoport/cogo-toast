@@ -23,6 +23,8 @@ Install via Yarn:
 yarn add cogo-toast
 ```
 
+<p align="center"><img src="docs/static/preview.png" alt="cogo-toast-preview" title="cogo-toast-preview" width="120"><p>
+
 #### Note:
 
 The latest version `^3.0.0` makes the use of React Hooks internally.
