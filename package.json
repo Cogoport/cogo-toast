@@ -4,6 +4,8 @@
 	"version": "3.1.0",
 	"license": "MIT",
 	"scripts": {
+		"setup": "yarn install && cd docs && yarn install",
+		"add-contributor": "kcd-scripts contributors add",
 		"dev-npm": "rollup -c -w",
 		"dev-docs": "cd docs && $npm_execpath run dev",
 		"dev": "concurrently --kill-others-on-fail \"$npm_execpath run dev-npm\" \"$npm_execpath run dev-docs\"",
@@ -35,6 +37,7 @@
 		"eslint-plugin-react": "7.13.0",
 		"eslint-plugin-react-hooks": "1.6.0",
 		"gh-pages": "2.0.1",
+		"kcd-scripts": "^1.4.0",
 		"prettier": "1.18.2",
 		"prettier-eslint-cli": "4.7.1",
 		"react": "16.8.6",

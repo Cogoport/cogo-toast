@@ -1,0 +1,25 @@
+{
+  "projectName": "cogo-toast",
+  "projectOwner": "Cogoport",
+  "repoType": "github",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "anmolmahatpurka",
+      "name": "Anmol Mahatpurkar",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/36692003?s=460&v=4",
+      "profile": "https://github.com/Cogoport/cogo-toast",
+      "contributions": [
+        "code",
+				"design",
+        "doc"
+      ]
+    },
+  ],
+  "contributorsPerLine": 7,
+  "repoHost": "https://github.com"
+}
