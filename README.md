@@ -116,16 +116,22 @@ For all classnames, refer to [/src/styles.css](/src/styles.css)
 
 The package contains the minified build file, along with the SVG Icons and the Styles, built into the Code, with a total of ~4K Gzipped
 
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-
-[<img src="https://avatars2.githubusercontent.com/u/36692003?s=460&v=4" width="100px;" alt="Anmol Mahatpurkar"/><br /><sub><b>Anmol Mahatpurkar</b></sub>](https://github.com/anmolmahatpurkar)<br />[💻](https://github.com/Cogoport/cogo-toast/commits?author=anmolmahatpurkar 'Code') [🎨](https://cogoport.github.io/cogo-toast 'Design') [📖](https://cogoport.github.io/cogo-toast 'Documentation')
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-Contributions of any kind welcome!
-
 ### License
 
 `MIT`
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/anmolmahatpurkar"><img src="https://avatars2.githubusercontent.com/u/36692003?v=4" width="100px;" alt="Anmol Mahatpurkar"/><br /><sub><b>Anmol Mahatpurkar</b></sub></a><br /><a href="https://github.com/Cogoport/cogo-toast/commits?author=anmolmahatpurkar" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

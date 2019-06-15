@@ -2,24 +2,23 @@
   "projectName": "cogo-toast",
   "projectOwner": "Cogoport",
   "repoType": "github",
+  "repoHost": "https://github.com",
   "files": [
     "README.md"
   ],
   "imageSize": 100,
-  "commit": false,
+  "commit": true,
+  "commitConvention": "eslint",
   "contributors": [
     {
-      "login": "anmolmahatpurka",
+      "login": "anmolmahatpurkar",
       "name": "Anmol Mahatpurkar",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/36692003?s=460&v=4",
-      "profile": "https://github.com/Cogoport/cogo-toast",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/36692003?v=4",
+      "profile": "https://github.com/anmolmahatpurkar",
       "contributions": [
-        "code",
-				"design",
-        "doc"
+        "code"
       ]
-    },
+    }
   ],
-  "contributorsPerLine": 7,
-  "repoHost": "https://github.com"
+  "contributorsPerLine": 7
 }
