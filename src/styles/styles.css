@@ -52,6 +52,10 @@
 	pointer-events: all;
 }
 
+.ct-toast:focus {
+	outline: none;
+}
+
 .ct-cursor-pointer {
 	cursor: pointer;
 }

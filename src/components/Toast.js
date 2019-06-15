@@ -33,13 +33,11 @@ const Toast = (props) => {
 	};
 
 	const handleHide = () => {
-		setTimeout(() => {
-			setAnimStyles({ opacity: 0, [marginType]: '-15px' });
+		setAnimStyles({ opacity: 0, [marginType]: '-15px' });
 
-			setTimeout(() => {
-				props.onHide(props.id, props.position);
-			}, 300);
-		}, props.hideAfter * 1000);
+		setTimeout(() => {
+			props.onHide(props.id, props.position);
+		}, 300);
 	};
 
 	useEffect(() => {
@@ -48,7 +46,9 @@ const Toast = (props) => {
 		}, 50);
 
 		if (props.hideAfter !== 0) {
-			handleHide();
+			setTimeout(() => {
+				handleHide();
+			}, props.hideAfter * 1000);
 		}
 	}, []);
 
@@ -60,7 +60,7 @@ const Toast = (props) => {
 
 	const clickProps = {
 		tabIndex: 0,
-		onClick: props.onClick,
+		onClick: () => props.onClick(handleHide),
 		role: 'button',
 		onKeyPress: (event) => {
 			if (event.keyCode === 13) {

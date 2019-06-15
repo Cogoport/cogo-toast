@@ -1,5 +1,17 @@
 ### Features
 
+- v3.1.0
+
+  - Ability to hide the toast immediately on click. `hide` function passed as a param in `onClick`.
+
+  ```javascript
+  cogoToast.success('This is a success message.', {
+  	onClick: (hide) => {
+  		hide();
+  	},
+  });
+  ```
+
 - v3.0.0
 
   - Major internal rewrite to remove ReactDOMServer dependency.
