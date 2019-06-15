@@ -11,6 +11,9 @@
 ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
 [![License](https://img.shields.io/npm/l/@xstyled/styled-components.svg)](https://github.com/Cogoport/cogo-toast/blob/master/LICENSE)
 
+<p align="center"><img src="docs/static/images/preview.png" alt="cogo-toast-preview" title="cogo-toast-preview"><p>
+
+
 Install via NPM:
 
 ```bash
@@ -22,8 +25,6 @@ Install via Yarn:
 ```bash
 yarn add cogo-toast
 ```
-
-<p align="center"><img src="docs/static/images/preview.png" alt="cogo-toast-preview" title="cogo-toast-preview"><p>
 
 #### Note:
 
