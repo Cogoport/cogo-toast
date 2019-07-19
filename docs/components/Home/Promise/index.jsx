@@ -15,6 +15,10 @@ const showToast = () => {
 	});
 };
 
+const code = `cogoToast.loading('Loading your data...').then(() => {
+  cogoToast.success('Data Successfully Loaded');
+});`;
+
 const Types = () => (
 	<CodePanel heading="Returns a Promise, With Useful Callbacks">
 		<Section>
@@ -25,11 +29,7 @@ const Types = () => (
 				</Paragraph>
 			</Group>
 			<Group className="code">
-				<CodeBlock>
-					<div>{'cogoToast.loading("Loading your data...").then(()=>{'}</div>
-					<div style={{ marginLeft: 25 }}>cogoToast.success("Data Successfully Loaded");</div>
-					<div>{'});'}</div>
-				</CodeBlock>
+				<CodeBlock>{code}</CodeBlock>
 				<Button className="primary" onClick={showToast}>
 					Show Me
 				</Button>

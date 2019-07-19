@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-	string, number, bool, func, shape, oneOfType,
+	string, number, bool, func, shape, node, oneOfType,
 } from 'prop-types';
 
 import Icons from './Icons';
@@ -82,7 +82,7 @@ const Toast = (props) => {
 
 Toast.propTypes = {
 	type: string.isRequired,
-	text: string.isRequired,
+	text: oneOfType([string, node]).isRequired,
 	show: bool,
 	onHide: func,
 	id: oneOfType([string, number]),

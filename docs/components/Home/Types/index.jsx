@@ -15,17 +15,12 @@ const showMessage = type => cogoToast[type](`This is a ${type} message.`, {
 
 const showAll = () => types.forEach(type => showMessage(type));
 
-const codeBlock = (
-	<CodePanel.Block>
-		{types.map(type => (
-			<div key={`code_${type}`}>
-				cogoToast.
-				{type}
-				('This is a {type} message');
-			</div>
-		))}
-	</CodePanel.Block>
+const code = types.reduce(
+	(prev, type) => `${prev ? `${prev} \n` : ''} cogoToast.${type}('This is a ${type} message');`,
+	'',
 );
+
+const codeBlock = <CodePanel.Block>{code}</CodePanel.Block>;
 
 const Types = () => (
 	<CodePanel heading="5 Built in Types" code={codeBlock}>

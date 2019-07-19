@@ -61,6 +61,19 @@ cogoToast.warn('This is a warn message');
 cogoToast.error('This is a error message');
 ```
 
+### Use JSX
+
+**cogoToast** is built using React. Which means any valid jsx can be used as the message in cogoToast
+
+```javascript
+cogoToast.info(
+	<div>
+		<b>Awesome!</b>
+		<div>Isn't it?</div>
+	</div>,
+);
+```
+
 ### Returns a Promise
 
 Returns a promise which resolves when the toast is about to hide.
