@@ -67,10 +67,10 @@ cogoToast.error('This is a error message');
 
 ```javascript
 cogoToast.info(
-	<div>
-		<b>Awesome!</b>
-		<div>Isn't it?</div>
-	</div>,
+  <div>
+    <b>Awesome!</b>
+    <div>Isn't it?</div>
+  </div>,
 );
 ```
 
