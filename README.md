@@ -118,6 +118,7 @@ Here's a list of all the available options, to customize the toast to your needs
 |  renderIcon   |                                       Function<ReactNode>                                        |                   Icon Based on the Type                   |
 |      bar      |           Object <br /> `{ size: '2px', style: 'solid/dashed/dotted', color: '#hex' }`           |                     Based on the Type                      |
 | onClick(hide) |                                             Function                                             |                           `null`                           |
+| containerCssSelector |                                             String                                        |                           `null`                           |
 
 #### Custom Styling
 
