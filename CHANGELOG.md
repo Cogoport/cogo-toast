@@ -1,5 +1,9 @@
 ### Features
 
+- v3.3.0
+
+	- Add `containerCssSelector` option
+
 - v3.2.1
 
 	- 3.2.0 Accidentally published a Non-Minified Build. 3.2.1 fixes this
