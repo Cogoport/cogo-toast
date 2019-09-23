@@ -134,13 +134,17 @@ The package contains the minified build file, along with the SVG Icons and the S
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
     <td align="center"><a href="https://github.com/anmolmahatpurkar"><img src="https://avatars2.githubusercontent.com/u/36692003?v=4" width="100px;" alt="Anmol Mahatpurkar"/><br /><sub><b>Anmol Mahatpurkar</b></sub></a><br /><a href="https://github.com/Cogoport/cogo-toast/commits?author=anmolmahatpurkar" title="Code">💻</a> <a href="#design-anmolmahatpurkar" title="Design">🎨</a> <a href="https://github.com/Cogoport/cogo-toast/commits?author=anmolmahatpurkar" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://balazsorban.com"><img src="https://avatars1.githubusercontent.com/u/18369201?v=4" width="100px;" alt="Balázs Orbán"/><br /><sub><b>Balázs Orbán</b></sub></a><br /><a href="https://github.com/Cogoport/cogo-toast/commits?author=balazsorban44" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
