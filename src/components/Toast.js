@@ -70,7 +70,7 @@ const Toast = (props) => {
 	};
 
 	return (
-		<div className={className} style={style} {...(props.onClick ? clickProps : {})}>
+		<div aria-live="polite" className={className} role="status" style={style} {...(props.onClick ? clickProps : {})}>
 			{props.renderIcon ? props.renderIcon() : <CurrentIcon />}
 			<div className={props.heading ? 'ct-text-group-heading' : 'ct-text-group'}>
 				{props.heading && <h4 className="ct-heading">{props.heading}</h4>}
