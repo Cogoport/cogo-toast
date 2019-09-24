@@ -71,7 +71,11 @@ const Toast = props => {
 	};
 
 	return (
-		<div className={className} role="status" style={style} {...(props.onClick ? clickProps : {})}>
+		<div
+			className={className}
+			role={props.role ? props.role : 'status'}
+			style={style}
+			{...(props.onClick ? clickProps : {})}>
 			{props.renderIcon ? props.renderIcon() : <CurrentIcon />}
 			<div className={props.heading ? 'ct-text-group-heading' : 'ct-text-group'}>
 				{props.heading && <h4 className="ct-heading">{props.heading}</h4>}
@@ -93,6 +97,7 @@ Toast.propTypes = {
 	renderIcon: func,
 	bar: shape({}),
 	onClick: func,
+	role: string,
 };
 
 Toast.defaultProps = {
@@ -105,6 +110,7 @@ Toast.defaultProps = {
 	renderIcon: null,
 	bar: {},
 	onClick: null,
+	role: 'status',
 };
 
 export default Toast;

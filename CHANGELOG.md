@@ -1,5 +1,32 @@
 ### Features
 
+- 4.0.0
+
+	- Breaking Change
+		- Hide the toast on Click
+
+		Now: 
+
+		```javascript
+			cogoToast.success('This is a success message.', {
+				onClick: (hide) => {
+					hide();
+				},
+		```
+
+		Before: 
+
+		```javascript
+			const { hide } = cogoToast.success('This is a success message.', {
+				onClick: () => {
+					hide();
+				},
+		```
+
+		- Toast now always returns a promise, as opposed to before. See issue #28
+
+		- Accesibilty - Added a role of `status` by default. Configurable via options. Thanks @balazsorban44.
+
 - v3.2.2
 
 	- classnames added to each type of toast, to enable css overrides
