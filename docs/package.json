@@ -12,9 +12,9 @@
 	"dependencies": {
 		"@emotion/core": "10.0.17",
 		"@emotion/styled": "10.0.17",
-		"babel-plugin-emotion": "10.0.17",
+		"babel-plugin-emotion": "10.0.19",
 		"cogo-toast": "link:../",
-		"next": "^9.0.5",
+		"next": "^9.0.6",
 		"prism-react-renderer": "^0.1.7",
 		"react": "^16.9.0",
 		"react-dom": "^16.9.0"

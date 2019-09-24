@@ -1,25 +1,33 @@
 {
 	"parser": "babel-eslint",
-	"extends": ["airbnb"],
 	"plugins": ["react", "jsx-a11y", "import", "react-hooks"],
+	"extends": ["airbnb", "plugin:prettier/recommended", "prettier/react", "prettier/standard"],
 	"env": { "browser": true },
 	"rules": {
-		"no-tabs": "off",
-		"no-underscore-dangle": "off",
-		"no-param-reassign": "off",
-		"no-plusplus": "off",
-		"eqeqeq": "off",
-		"camelcase": "off",
-		"import/prefer-default-export": "off",
-		"import/no-extraneous-dependencies": "off",
 		"indent": ["warn", "tab", { "SwitchCase": 1 }],
-		"react/destructuring-assignment": "off",
+		"prettier/prettier": "error",
+		"no-underscore-dangle": "off",
+		"no-cond-assign": "off",
+		"no-plusplus": "off",
+		"no-tabs": "off",
+		"eqeqeq": "warn",
+		"camelcase": "off",
+		"import/no-extraneous-dependencies": "off",
+		"import/prefer-default-export": "off",
+		"react/jsx-props-no-spreading": "off",
 		"react/jsx-indent": ["error", "tab"],
 		"react/jsx-indent-props": ["error", "tab"],
 		"react/no-array-index-key": "warn",
 		"react/jsx-one-expression-per-line": "off",
-		"react/jsx-filename-extension": "off",
+		"react/jsx-filename-extension": [1, { "extensions": [".jsx"] }],
+		"jsx-a11y/mouse-events-have-key-events": "off",
 		"jsx-a11y/media-has-caption": "off",
 		"jsx-a11y/anchor-is-valid": "off"
+	},
+	"settings": {
+		"import/extensions": [".js", ".jsx"],
+		"import/resolver": {
+			"node": { "extensions": [".js", ".jsx"] }
+		}
 	}
 }
