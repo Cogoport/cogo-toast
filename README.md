@@ -67,10 +67,10 @@ cogoToast.error('This is a error message');
 
 ```javascript
 cogoToast.info(
-	<div>
-		<b>Awesome!</b>
-		<div>Isn't it?</div>
-	</div>,
+  <div>
+    <b>Awesome!</b>
+    <div>Isn't it?</div>
+  </div>,
 );
 ```
 
@@ -82,7 +82,7 @@ This can be useful to do some action when the toast has completed showing.
 
 ```javascript
 cogoToast.loading('Loading your data...').then(() => {
-	cogoToast.success('Data Successfully Loaded');
+  cogoToast.success('Data Successfully Loaded');
 });
 ```
 
@@ -90,9 +90,9 @@ cogoToast.loading('Loading your data...').then(() => {
 
 ```javascript
 const { hide } = cogoToast.success('This is a success message.', {
-	onClick: () => {
-		hide();
-	},
+  onClick: () => {
+    hide();
+  },
 });
 ```
 

@@ -2,26 +2,28 @@
 
 - 4.0.0
 
-	- Breaking Change
-		- Hide the toast on Click
+  - Breaking Change
+    - Hide the toast on Click
 
-		Now: 
+    Before:
 
-		```javascript
-			cogoToast.success('This is a success message.', {
-				onClick: (hide) => {
-					hide();
-				},
-		```
+    ```javascript
+      cogoToast.success('This is a success message.', {
+        onClick: (hide) => {
+          hide();
+        },
+      };
+    ```
 
-		Before: 
+    Now:
 
-		```javascript
-			const { hide } = cogoToast.success('This is a success message.', {
-				onClick: () => {
-					hide();
-				},
-		```
+    ```javascript
+      const { hide } = cogoToast.success('This is a success message.', {
+        onClick: () => {
+          hide();
+        },
+      };
+    ```
 
 		- Toast now always returns a promise, as opposed to before. See issue #28
 
