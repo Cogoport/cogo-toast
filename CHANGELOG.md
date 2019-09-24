@@ -25,18 +25,17 @@
       };
     ```
 
-		- Toast now always returns a promise, as opposed to before. See issue #28
+    - Toast now always returns a promise, as opposed to before. See issue #28
 
-		- Accesibilty - Added a role of `status` by default. Configurable via options. Thanks @balazsorban44.
+    - Accesibilty - Added a role of `status` by default. Configurable via options. Thanks @balazsorban44.
 
 - v3.2.2
 
-	- classnames added to each type of toast, to enable css overrides
-
+  - classnames added to each type of toast, to enable css overrides
 
 - v3.2.1
 
-	- 3.2.0 Accidentally published a Non-Minified Build. 3.2.1 fixes this
+  - 3.2.0 Accidentally published a Non-Minified Build. 3.2.1 fixes this
 
 - v3.2.0
 
@@ -51,9 +50,9 @@
 
   ```javascript
   cogoToast.success('This is a success message.', {
-  	onClick: hide => {
-  		hide();
-  	},
+    onClick: hide => {
+      hide();
+    },
   });
   ```
 
@@ -72,12 +71,12 @@
 
   - Fix for top level typings declaration
 
-* v2.0.0
+- v2.0.0
 
   - Custom styling is now supported. Just extend the css classes to specify your own styles. For all classnames, refer to [/src/styles.css](/src/styles.css)
 
   - Typescript typings added. Shout out to @sebastien-p
 
-* v1.0.7 - Internal dependencies and build system upgraded. No changes to the toast.
+- v1.0.7 - Internal dependencies and build system upgraded. No changes to the toast.
 
-* **cogoToast:** `cogoToast` is the root object of the containing of 5 functions, `success`, `info`, `loading`, `warn`, and `error`.
+- **cogoToast:** `cogoToast` is the root object of the containing of 5 functions, `success`, `info`, `loading`, `warn`, and `error`.
