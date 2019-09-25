@@ -11,7 +11,9 @@
 ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
 [![License](https://img.shields.io/npm/l/@xstyled/styled-components.svg)](https://github.com/Cogoport/cogo-toast/blob/master/LICENSE)
 
-<p align="center"><img src="docs/static/images/preview.png" alt="cogo-toast-preview" title="cogo-toast-preview"><p>
+<p align="center">
+<img src="docs/static/images/preview.gif" alt="cogo-toast-preview" title="cogo-toast-preview">
+<p>
 
 ### Install via NPM:
 
@@ -141,12 +143,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/anmolmahatpurkar"><img src="https://avatars2.githubusercontent.com/u/36692003?v=4" width="100px;" alt="Anmol Mahatpurkar"/><br /><sub><b>Anmol Mahatpurkar</b></sub></a><br /><a href="https://github.com/Cogoport/cogo-toast/commits?author=anmolmahatpurkar" title="Code">💻</a> <a href="#design-anmolmahatpurkar" title="Design">🎨</a> <a href="https://github.com/Cogoport/cogo-toast/commits?author=anmolmahatpurkar" title="Documentation">📖</a></td>
     <td align="center"><a href="https://balazsorban.com"><img src="https://avatars1.githubusercontent.com/u/18369201?v=4" width="100px;" alt="Balázs Orbán"/><br /><sub><b>Balázs Orbán</b></sub></a><br /><a href="https://github.com/Cogoport/cogo-toast/commits?author=balazsorban44" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Keaws"><img src="https://avatars1.githubusercontent.com/u/5289466?v=4" width="100px;" alt="Vitalii Kalchuk"/><br /><sub><b>Vitalii Kalchuk</b></sub></a><br /><a href="https://github.com/Cogoport/cogo-toast/commits?author=Keaws" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.apathak.com"><img src="https://avatars1.githubusercontent.com/u/24917309?v=4" width="100px;" alt="Amar Pathak"/><br /><sub><b>Amar Pathak</b></sub></a><br /><a href="https://github.com/Cogoport/cogo-toast/commits?author=amarpathak" title="Documentation">📖</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
