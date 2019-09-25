@@ -9,7 +9,7 @@ import './styles/styles.css';
 let ctToastCount = 0;
 
 const cogoToast = (text, options) => {
-	let rootContainer = document.querySelector(options.containerCssSelector) || document.getElementById('ct-container');
+	let rootContainer = document.getElementById(options.toastContainerID || 'ct-container');
 
 	if (!rootContainer) {
 		rootContainer = document.createElement('div');

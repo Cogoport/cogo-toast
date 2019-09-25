@@ -117,7 +117,7 @@ Here's a list of all the available options, to customize the toast to your needs
 |      bar      |           Object <br /> `{ size: '2px', style: 'solid/dashed/dotted', color: '#hex' }`           |                     Based on the Type                      |
 | onClick() |                                             Function                                             |                           `null`                           |
 | role |                                             aria-role                                             |                           `status`                           |
-| containerCssSelector |                                             String                                        |                           `null`                           |
+| containerCssSelector |                                             String                                        |                           `undefined`                           |
 
 ### Custom Styling
 
