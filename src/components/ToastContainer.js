@@ -14,12 +14,12 @@ const defaultToasts = {
 	bottomRight: [],
 };
 
-const ToastContainer = (props) => {
+const ToastContainer = props => {
 	const [allToasts, setToasts] = useState(defaultToasts);
 
 	useEffect(() => {
 		if (props.toast) {
-			setToasts((prevToasts) => {
+			setToasts(prevToasts => {
 				const position = camelCase(props.toast.position || 'top-center');
 				return { ...prevToasts, [position]: [...prevToasts[position], props.toast] };
 			});
@@ -27,7 +27,7 @@ const ToastContainer = (props) => {
 	}, [props.toast]);
 
 	const handleRemove = (id, position) => {
-		setToasts((prevToasts) => {
+		setToasts(prevToasts => {
 			const toastPosition = camelCase(position || 'top-center');
 			return {
 				...prevToasts,
@@ -43,7 +43,7 @@ const ToastContainer = (props) => {
 		<>
 			{rows.map(row => (
 				<div key={`row_${row}`} className="ct-row">
-					{groups.map((group) => {
+					{groups.map(group => {
 						const type = `${row}${group}`;
 						const className = ['ct-group', row === 'bottom' ? 'ct-flex-bottom' : ''].join(' ');
 						return (

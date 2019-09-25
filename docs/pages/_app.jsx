@@ -1,5 +1,5 @@
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import Head from 'next/head';
 
 import Meta from '../components/Meta';
@@ -21,7 +21,7 @@ class MyApp extends App {
 		const { Component, pageProps = {} } = this.props;
 
 		return (
-			<Container>
+			<>
 				<Head>
 					<title>Beautiful, Zero Configuration, Toast Messages | CogoToast</title>
 					<Meta />
@@ -29,7 +29,7 @@ class MyApp extends App {
 				</Head>
 				<GlobalStyles />
 				<Component {...pageProps} />
-			</Container>
+			</>
 		);
 	}
 }

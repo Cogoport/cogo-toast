@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-	string, number, bool, func, shape, node, oneOfType,
-} from 'prop-types';
+import { string, number, bool, func, shape, node, oneOfType } from 'prop-types';
 
 import Icons from './Icons';
 
@@ -13,13 +11,17 @@ const colors = {
 	loading: '#0088ff',
 };
 
-const Toast = (props) => {
+const Toast = props => {
 	const place = (props.position || 'top-center').includes('bottom') ? 'Bottom' : 'Top';
 	const marginType = `margin${place}`;
 
-	const className = ['ct-toast', props.onClick ? ' ct-cursor-pointer' : ''].join(' ');
-	const borderLeft = `${props.bar.size || '3px'} ${props.bar.style || 'solid'} ${props.bar.color
-		|| colors[props.type]}`;
+	const className = [
+		'ct-toast',
+		props.onClick ? ' ct-cursor-pointer' : '',
+		`ct-toast-${props.type}`,
+	].join(' ');
+	const borderLeft = `${props.bar.size || '3px'} ${props.bar.style || 'solid'} ${props.bar.color ||
+		colors[props.type]}`;
 
 	const CurrentIcon = Icons[props.type];
 
@@ -60,9 +62,8 @@ const Toast = (props) => {
 
 	const clickProps = {
 		tabIndex: 0,
-		onClick: () => props.onClick(handleHide),
-		role: 'button',
-		onKeyPress: (event) => {
+		onClick: props.onClick,
+		onKeyPress: event => {
 			if (event.keyCode === 13) {
 				props.onClick();
 			}
@@ -70,7 +71,11 @@ const Toast = (props) => {
 	};
 
 	return (
-		<div className={className} style={style} {...(props.onClick ? clickProps : {})}>
+		<div
+			className={className}
+			role={props.role ? props.role : 'status'}
+			style={style}
+			{...(props.onClick ? clickProps : {})}>
 			{props.renderIcon ? props.renderIcon() : <CurrentIcon />}
 			<div className={props.heading ? 'ct-text-group-heading' : 'ct-text-group'}>
 				{props.heading && <h4 className="ct-heading">{props.heading}</h4>}
@@ -92,6 +97,7 @@ Toast.propTypes = {
 	renderIcon: func,
 	bar: shape({}),
 	onClick: func,
+	role: string,
 };
 
 Toast.defaultProps = {
@@ -104,6 +110,7 @@ Toast.defaultProps = {
 	renderIcon: null,
 	bar: {},
 	onClick: null,
+	role: 'status',
 };
 
 export default Toast;

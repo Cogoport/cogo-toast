@@ -28,18 +28,20 @@ const cogoToast = (text, options) => {
 		ReactDOM.render(<ToastContainer hiddenID={toast.id} />, rootContainer);
 	};
 
-	const completePromise = new Promise((resolve) => {
+	const completePromise = new Promise(resolve => {
 		setTimeout(() => {
 			resolve();
 		}, hideTime);
 	});
 
-	return hideTime <= 0 ? hide : completePromise;
+	completePromise.hide = hide;
+
+	return completePromise;
 };
 
 const types = ['success', 'info', 'warn', 'error', 'loading'];
 
-types.forEach((type) => {
+types.forEach(type => {
 	cogoToast[type] = (text, options) => cogoToast(text, { ...options, type });
 });
 
