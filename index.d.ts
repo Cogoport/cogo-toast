@@ -21,10 +21,7 @@ export type Options = Partial<{
 
 export type HideToastFunction = () => void;
 
-export type Method = {
-	(message: string, options?: Options & { hideAfter: 0 }): HideToastFunction;
-	(message: string, options?: Options): Promise<void>;
-};
+export type Method = (message: string, options?: Options): Promise<void> & {hide: HideToastFunction};
 
 declare namespace cogoToast {
 	export const success: Method;
