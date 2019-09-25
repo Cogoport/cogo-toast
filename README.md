@@ -117,7 +117,7 @@ Here's a list of all the available options, to customize the toast to your needs
 |      bar      |           Object <br /> `{ size: '2px', style: 'solid/dashed/dotted', color: '#hex' }`           |                     Based on the Type                      |
 | onClick() |                                             Function                                             |                           `null`                           |
 | role |                                             aria-role                                             |                           `status`                           |
-| toastContainerID |                                             String                                        |                           `undefined`                           |
+| toastContainerID |                                             String                                        |                           `ct-container`                           |
 
 ### Custom Styling
 
@@ -146,6 +146,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
