@@ -24,7 +24,7 @@ export type Options = Partial<{
 export type HideToastFunction = () => void;
 
 export type Method = (
-	message: string,
+	message: string | JSX.Element,
 	options?: Options,
 ) => Promise<void> & { hide: HideToastFunction };
 
