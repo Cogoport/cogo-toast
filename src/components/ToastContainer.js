@@ -20,7 +20,7 @@ const ToastContainer = props => {
 	useEffect(() => {
 		if (props.toast) {
 			setToasts(prevToasts => {
-				const position = camelCase(props.toast.position || 'top-center');
+				const position = camelCase(props.toast.position || (`top-${props.toast.rtl ? 'right' : 'center'}`));
 				return { ...prevToasts, [position]: [...prevToasts[position], props.toast] };
 			});
 		}

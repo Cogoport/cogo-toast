@@ -21,6 +21,7 @@ const Hero = () => (
 			<Paragraph>~ 4K Gzipped (All Inclusive of Icons, Styles, &amp; Code)</Paragraph>
 			<Paragraph>- Completely Customizable</Paragraph>
 			<Paragraph>- Built with React</Paragraph>
+			<Paragraph>- Support RTL</Paragraph>
 		</Section>
 	</Container>
 );

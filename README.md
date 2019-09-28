@@ -98,6 +98,12 @@ const { hide } = cogoToast.success('This is a success message.', {
 });
 ```
 
+### Support RTL
+
+```javascript
+cogoToast.rtl.info('من اليمين الى اليسار');
+```
+
 ### Completely Customizable
 
 The second parameter to the function is an options object that can be passed in for customization.
@@ -113,13 +119,14 @@ Here's a list of all the available options, to customize the toast to your needs
 |    Options    |                                               Type                                               |                          Default                           |
 | :-----------: | :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------: |
 |   hideAfter   |                                        Number in Seconds                                         | `3` <br />(Can be `0` to disable auto-hiding of the toast) |
-|   position    | `'top-left', 'top-center', 'top-right',` <br /> `'bottom-left', 'bottom-center', 'bottom-right'` |                       `'top-center'`                       |
+|   position    | `'top-left', 'top-center', 'top-right',` <br /> `'bottom-left', 'bottom-center', 'bottom-right'` |                       top-center                       |
 |    heading    |                                              String                                              |                            `''`                            |
 |  renderIcon   |                                       Function<ReactNode>                                        |                   Icon Based on the Type                   |
 |      bar      |           Object <br /> `{ size: '2px', style: 'solid/dashed/dotted', color: '#hex' }`           |                     Based on the Type                      |
 | onClick() |                                             Function                                             |                           `null`                           |
 | role |                                             aria-role                                             |                           `status`                           |
 | toastContainerID |                   The dom element in which the toast container is added                                         |                           `ct-container`                           |
+|  rtl  |  Enable RTL  | `false` |
 
 ### Custom Styling
 

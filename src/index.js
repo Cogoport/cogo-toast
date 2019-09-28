@@ -41,9 +41,14 @@ const cogoToast = (text, options) => {
 
 const types = ['success', 'info', 'warn', 'error', 'loading'];
 
+const rtl = {}
+
 types.forEach(type => {
 	cogoToast[type] = (text, options) => cogoToast(text, { ...options, type });
+	rtl[type] = (text, options) => cogoToast(text, { ...options, type, rtl: true });
 });
+
+cogoToast.rtl = rtl;
 
 export { Toast };
 

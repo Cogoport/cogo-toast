@@ -105,6 +105,11 @@
 	font-size: 14px;
 }
 
+.ct-rtl .ct-text-group {
+	margin-left: 0px;
+	margin-right: 15px;
+}
+
 @media (max-width: 768px) {
 	.ct-row {
 		justify-content: flex-start;

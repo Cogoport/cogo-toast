@@ -1,5 +1,9 @@
 ### Features
 
+- 4.2.0
+
+  - Added support RTL languages
+
 - 4.1.1
 
   - Added missing types for 4.0, role, and toastContainerID. #35

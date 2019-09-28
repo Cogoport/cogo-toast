@@ -19,6 +19,7 @@ export type Options = Partial<{
 		color: string;
 	}>;
 	onClick: MouseEventHandler;
+	rtl: boolean;
 }>;
 
 export type HideToastFunction = () => void;

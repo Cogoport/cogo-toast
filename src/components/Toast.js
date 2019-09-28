@@ -12,15 +12,16 @@ const colors = {
 };
 
 const Toast = props => {
-	const place = (props.position || 'top-center').includes('bottom') ? 'Bottom' : 'Top';
+	const place = (props.position || (`top-${props.rtl ? 'right' : 'center'}`)).includes('bottom') ? 'Bottom' : 'Top';
 	const marginType = `margin${place}`;
 
 	const className = [
 		'ct-toast',
+		props.rtl ? ' ct-rtl' : '',
 		props.onClick ? ' ct-cursor-pointer' : '',
 		`ct-toast-${props.type}`,
 	].join(' ');
-	const borderLeft = `${props.bar.size || '3px'} ${props.bar.style || 'solid'} ${props.bar.color ||
+	const borderTo = `${props.bar.size || '3px'} ${props.bar.style || 'solid'} ${props.bar.color ||
 		colors[props.type]}`;
 
 	const CurrentIcon = Icons[props.type];
@@ -30,7 +31,7 @@ const Toast = props => {
 	const style = {
 		paddingLeft: props.heading ? 25 : undefined,
 		minHeight: props.heading ? 50 : undefined,
-		borderLeft,
+		['border' + (props.rtl ? 'Right' : 'Left')]: borderTo,
 		...animStyles,
 	};
 
@@ -38,7 +39,7 @@ const Toast = props => {
 		setAnimStyles({ opacity: 0, [marginType]: '-15px' });
 
 		setTimeout(() => {
-			props.onHide(props.id, props.position);
+			props.onHide(props.id, !!props.position ? props.position : (`top-${props.rtl ? 'right' : 'center'}`));
 		}, 300);
 	};
 
@@ -70,17 +71,26 @@ const Toast = props => {
 		},
 	};
 
+	const elements = [
+		props.renderIcon ? props.renderIcon() : <CurrentIcon />,
+		<div className={props.heading ? 'ct-text-group-heading' : 'ct-text-group'}>
+			{props.heading && <h4 className="ct-heading">{props.heading}</h4>}
+			<div className="ct-text">{props.text}</div>
+		</div>
+	];
+
+	if (props.rtl) {
+		elements.reverse();
+	}
+
 	return (
 		<div
 			className={className}
 			role={props.role ? props.role : 'status'}
 			style={style}
-			{...(props.onClick ? clickProps : {})}>
-			{props.renderIcon ? props.renderIcon() : <CurrentIcon />}
-			<div className={props.heading ? 'ct-text-group-heading' : 'ct-text-group'}>
-				{props.heading && <h4 className="ct-heading">{props.heading}</h4>}
-				<div className="ct-text">{props.text}</div>
-			</div>
+			{...(props.onClick ? clickProps : {})}
+		>
+			{elements}
 		</div>
 	);
 };
@@ -98,6 +108,7 @@ Toast.propTypes = {
 	bar: shape({}),
 	onClick: func,
 	role: string,
+	rtl: bool,
 };
 
 Toast.defaultProps = {
@@ -106,11 +117,12 @@ Toast.defaultProps = {
 	onHide: null,
 	hideAfter: 3,
 	heading: null,
-	position: 'top-center',
+	position: '',
 	renderIcon: null,
 	bar: {},
 	onClick: null,
 	role: 'status',
+	rtl: false,
 };
 
 export default Toast;
