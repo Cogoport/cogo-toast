@@ -91,8 +91,8 @@ cogoToast.loading('Loading your data...').then(() => {
 ### Hide on Click
 
 ```javascript
-const { hide } = cogoToast.success('This is a success message.', {
-  onClick: () => {
+cogoToast.success('This is a success message.', {
+  onClick: hide => {
     hide();
   },
 });
