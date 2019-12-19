@@ -56,6 +56,10 @@
 	outline: none;
 }
 
+.ct-toast svg {
+	min-width: 18px;
+}
+
 .ct-cursor-pointer {
 	cursor: pointer;
 }
