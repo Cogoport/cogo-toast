@@ -1,5 +1,9 @@
 ### Features
 
+- 4.1.2
+
+  - Fixes #44 and #45
+
 - 4.1.1
 
   - Added missing types for 4.0, role, and toastContainerID. #35
