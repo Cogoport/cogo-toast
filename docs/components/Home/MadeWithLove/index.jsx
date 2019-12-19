@@ -9,7 +9,7 @@ const MadeWithLove = () => (
 			Made with <HeartIcon />
 			at
 			<Logo
-				src="https://www.cogoport.com/static/images/main_logo.svg"
+				src="https://dev-cogoport.s3.ap-south-1.amazonaws.com/2a06ea838cc4453ab9d7cb7cec5d27b4.png"
 				alt="Cogoport - Simplifying International Logistics"
 			/>
 		</Container>

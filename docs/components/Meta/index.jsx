@@ -1,6 +1,6 @@
 import React from 'react';
 
-const { linkPrefix } = process.env;
+const { linkPrefix = '/' } = process.env;
 
 const Meta = () => (
 	<>
@@ -13,22 +13,22 @@ const Meta = () => (
 		<link
 			rel="apple-touch-icon"
 			sizes="76x76"
-			href={`${linkPrefix}static/meta/apple-touch-icon.png`}
+			href={`${linkPrefix}meta/apple-touch-icon.png`}
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="32x32"
-			href={`${linkPrefix}static/meta/favicon-32x32.png`}
+			href={`${linkPrefix}meta/favicon-32x32.png`}
 		/>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="16x16"
-			href={`${linkPrefix}static/meta/favicon-16x16.png`}
+			href={`${linkPrefix}meta/favicon-16x16.png`}
 		/>
-		<link rel="manifest" href={`${linkPrefix}static/meta/site.webmanifest`} />
-		<link rel="mask-icon" href={`${linkPrefix}static/meta/safari-pinned-tab.svg`} color="#4cba70" />
+		<link rel="manifest" href={`${linkPrefix}meta/site.webmanifest`} />
+		<link rel="mask-icon" href={`${linkPrefix}meta/safari-pinned-tab.svg`} color="#4cba70" />
 
 		<meta name="msapplication-TileColor" content="#ffffff" />
 		<meta name="theme-color" content="#ffffff" />
@@ -51,7 +51,7 @@ const Meta = () => (
 			content="react,toast,react-toast,toast-react,toastr,toast messages,messages,notifications,react notifications,component,components,react component,react components,ui,cogoport,open source"
 		/>
 
-		<meta key="image" property="image" content={`${linkPrefix}static/meta/safari-pinned-tab.svg`} />
+		<meta key="image" property="image" content={`${linkPrefix}meta/safari-pinned-tab.svg`} />
 
 		<meta key="author" name="author" content="Cogoport" />
 
@@ -71,7 +71,7 @@ const Meta = () => (
 		<meta
 			key="og:image"
 			property="og:image"
-			content={`${linkPrefix}static/meta/safari-pinned-tab.svg`}
+			content={`${linkPrefix}meta/safari-pinned-tab.svg`}
 		/>
 
 		<meta key="twitter:site" name="twitter:site" content="https://cogoport.github.io/cogo-toast" />
@@ -80,7 +80,7 @@ const Meta = () => (
 		<meta
 			key="twitter:image"
 			name="twitter:image"
-			content={`${linkPrefix}static/meta/safari-pinned-tab.svg`}
+			content={`${linkPrefix}meta/safari-pinned-tab.svg`}
 		/>
 	</>
 );

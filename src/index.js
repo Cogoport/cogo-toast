@@ -14,7 +14,7 @@ const cogoToast = (text, options) => {
 	if (!rootContainer) {
 		rootContainer = document.createElement('div');
 		rootContainer.id = 'ct-container';
-		document.body.append(rootContainer);
+		document.body.appendChild(rootContainer);
 	}
 
 	ctToastCount += 1;
