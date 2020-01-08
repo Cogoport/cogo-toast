@@ -17,6 +17,7 @@
 		"no-cond-assign": "off",
 		"no-plusplus": "off",
 		"no-tabs": "off",
+		"no-unused-vars": "off",
 		"eqeqeq": "warn",
 		"camelcase": "off",
 		"import/extensions": "off",

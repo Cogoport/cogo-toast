@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { string, number, bool, func, shape, node, oneOfType } from 'prop-types';
 
 import Icons from './Icons';
+import { CTOptions } from '../types';
 
 const colors = {
 	success: '#6EC05F',
@@ -11,7 +12,17 @@ const colors = {
 	loading: '#0088ff',
 };
 
-const Toast = (props) => {
+type CToastProps = CTOptions & {
+	id: number;
+	type: string;
+	text: string;
+	show: boolean;
+	onHide: Function;
+	onClick: Function;
+	hideAfter: number;
+};
+
+const Toast: React.FC<CToastProps> = (props) => {
 	const place = (props.position || 'top-center').includes('bottom') ? 'Bottom' : 'Top';
 	const marginType = `margin${place}`;
 
@@ -20,12 +31,12 @@ const Toast = (props) => {
 		props.onClick ? ' ct-cursor-pointer' : '',
 		`ct-toast-${props.type}`,
 	].join(' ');
-	const borderLeft = `${props.bar.size || '3px'} ${props.bar.style || 'solid'} ${props.bar.color ||
-		colors[props.type]}`;
+	const borderLeft = `${props.bar?.size || '3px'} ${props.bar?.style || 'solid'} ${props.bar
+		?.color || colors[props.type]}`;
 
 	const CurrentIcon = Icons[props.type];
 
-	const [animStyles, setAnimStyles] = useState({ opacity: 0, [marginType]: -15 });
+	const [animStyles, setAnimStyles]: [any, Function] = useState({ opacity: 0, [marginType]: -15 });
 
 	const style = {
 		paddingLeft: props.heading ? 25 : undefined,
@@ -63,9 +74,9 @@ const Toast = (props) => {
 	const clickProps = {
 		tabIndex: 0,
 		onClick: props.onClick,
-		onKeyPress: (event) => {
-			if (event.keyCode === 13) {
-				props.onClick();
+		onKeyPress: (e: any) => {
+			if (e.keyCode === 13) {
+				props.onClick(e);
 			}
 		},
 	};
@@ -102,15 +113,15 @@ Toast.propTypes = {
 };
 
 Toast.defaultProps = {
-	id: null,
+	id: undefined,
 	show: true,
-	onHide: null,
+	onHide: undefined,
 	hideAfter: 3,
-	heading: null,
+	heading: undefined,
 	position: 'top-center',
-	renderIcon: null,
+	renderIcon: undefined,
 	bar: {},
-	onClick: null,
+	onClick: undefined,
 	role: 'status',
 };
 

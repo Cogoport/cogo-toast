@@ -24,7 +24,11 @@ const config = {
 		url({ exclude: ['**/*.svg'] }),
 		svgr(),
 		resolve(),
-		typescript({ lib: ['es5', 'es6', 'dom'], target: 'es5' }),
+		typescript({
+			tsconfig: './tsconfig.json',
+			lib: ['es5', 'es6', 'dom'],
+			target: 'es5',
+		}),
 		commonjs({
 			namedExports: {
 				react: Object.keys(react),

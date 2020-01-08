@@ -3,7 +3,7 @@ import { shape, number } from 'prop-types';
 
 import Toast from './Toast';
 
-const camelCase = (str) => str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+const camelCase = (str: string) => str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
 
 const defaultToasts = {
 	topLeft: [],
@@ -14,7 +14,18 @@ const defaultToasts = {
 	bottomRight: [],
 };
 
-const ToastContainer = ({ toast, hiddenID }) => {
+type CToastItem = {
+	id: number;
+};
+
+type CToastContainerProps = Partial<{
+	toast: {
+		position: string;
+	};
+	hiddenID: number;
+}>;
+
+const ToastContainer: React.FC<CToastContainerProps> = ({ toast, hiddenID }) => {
 	const [allToasts, setToasts] = useState(defaultToasts);
 
 	useEffect(() => {
@@ -26,12 +37,12 @@ const ToastContainer = ({ toast, hiddenID }) => {
 		}
 	}, [toast]);
 
-	const handleRemove = (id, position) => {
+	const handleRemove = (id: number, position: string) => {
 		setToasts((prevToasts) => {
 			const toastPosition = camelCase(position || 'top-center');
 			return {
 				...prevToasts,
-				[toastPosition]: prevToasts[toastPosition].filter((item) => item.id !== id),
+				[toastPosition]: prevToasts[toastPosition].filter((item: CToastItem) => item.id !== id),
 			};
 		});
 	};
@@ -48,7 +59,7 @@ const ToastContainer = ({ toast, hiddenID }) => {
 						const className = ['ct-group', row === 'bottom' ? 'ct-flex-bottom' : ''].join(' ');
 						return (
 							<div key={type} className={className}>
-								{allToasts[type].map((item) => (
+								{allToasts[type].map((item: CToastItem) => (
 									<Toast
 										key={`${type}_${item.id}`}
 										{...item}
@@ -71,8 +82,8 @@ ToastContainer.propTypes = {
 };
 
 ToastContainer.defaultProps = {
-	toast: null,
-	hiddenID: null,
+	toast: undefined,
+	hiddenID: undefined,
 };
 
 export default ToastContainer;

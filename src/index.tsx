@@ -4,12 +4,14 @@ import ReactDOM from 'react-dom';
 import ToastContainer from './components/ToastContainer';
 import Toast from './components/Toast';
 
+import { CToast, CTReturn } from './types';
+
 import './styles/styles.css';
 
 let ctToastCount = 0;
 
-const cogoToast = (text, options) => {
-	let rootContainer = document.getElementById(options.toastContainerID || 'ct-container');
+const cogoToast: CToast = (text, options?) => {
+	let rootContainer = document.getElementById(options?.toastContainerID || 'ct-container');
 
 	if (!rootContainer) {
 		rootContainer = document.createElement('div');
@@ -19,7 +21,7 @@ const cogoToast = (text, options) => {
 
 	ctToastCount += 1;
 
-	const hideTime = (options.hideAfter === undefined ? 3 : options.hideAfter) * 1000;
+	const hideTime = (options?.hideAfter === undefined ? 3 : options.hideAfter) * 1000;
 	const toast = { id: ctToastCount, text, ...options };
 
 	ReactDOM.render(<ToastContainer toast={toast} />, rootContainer);
@@ -28,7 +30,7 @@ const cogoToast = (text, options) => {
 		ReactDOM.render(<ToastContainer hiddenID={toast.id} />, rootContainer);
 	};
 
-	const completePromise = new Promise((resolve) => {
+	const completePromise: CTReturn = new Promise<void>((resolve) => {
 		setTimeout(() => {
 			resolve();
 		}, hideTime);
@@ -39,11 +41,11 @@ const cogoToast = (text, options) => {
 	return completePromise;
 };
 
-const types = ['success', 'info', 'warn', 'error', 'loading'];
-
-types.forEach((type) => {
-	cogoToast[type] = (text, options) => cogoToast(text, { ...options, type });
-});
+cogoToast.success = (t, o) => cogoToast(t, { ...o, type: 'success' });
+cogoToast.warn = (t, o) => cogoToast(t, { ...o, type: 'warn' });
+cogoToast.info = (t, o) => cogoToast(t, { ...o, type: 'info' });
+cogoToast.error = (t, o) => cogoToast(t, { ...o, type: 'error' });
+cogoToast.loading = (t, o) => cogoToast(t, { ...o, type: 'loading' });
 
 export { Toast };
 
