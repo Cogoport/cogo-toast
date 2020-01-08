@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import ToastContainer from './components/ToastContainer';
 import Toast from './components/Toast';
 
-import { CToast, CTReturn } from './index.d';
+import { CToast, CTReturn } from '../index.d';
 
 import './styles/styles.css';
 

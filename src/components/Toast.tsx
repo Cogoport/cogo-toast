@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { string, number, bool, func, shape, node, oneOfType } from 'prop-types';
 
 import Icons from './Icons';
-import { CTOptions } from '../index.d';
+import { CTOptions } from '../../index.d';
 
 const colors = {
 	success: '#6EC05F',

@@ -3,12 +3,12 @@ import { MouseEventHandler } from 'react';
 export type CTOptions = Partial<{
 	hideAfter: number;
 	position:
-	| 'top-left'
-	| 'top-center'
-	| 'top-right'
-	| 'bottom-left'
-	| 'bottom-center'
-	| 'bottom-right';
+		| 'top-left'
+		| 'top-center'
+		| 'top-right'
+		| 'bottom-left'
+		| 'bottom-center'
+		| 'bottom-right';
 	heading: string;
 	role: string;
 	toastContainerID: string;
@@ -36,3 +36,11 @@ export type CToast = CTMainMethod & {
 	error: CTMethod;
 	loading: CTMethod;
 };
+
+declare namespace cogoToast {
+	const success: CTMethod;
+	const info: CTMethod;
+	const loading: CTMethod;
+	const warn: CTMethod;
+	const error: CTMethod;
+}
