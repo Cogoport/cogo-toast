@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"export": "pnpm run build && next export",
-		"deploy": "rm -rf node_modules/.cache && pnpm export && touch out/.nojekyll"
+		"deploy": "rm -rf node_modules/.cache && pnpm run export && touch out/.nojekyll"
 	},
 	"dependencies": {
 		"@emotion/core": "10.0.27",

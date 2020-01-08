@@ -30,10 +30,7 @@ const config = {
 			target: 'es5',
 		}),
 		commonjs({
-			namedExports: {
-				react: Object.keys(react),
-				'react-dom': Object.keys(reactDom),
-			},
+			namedExports: { react: Object.keys(react), 'react-dom': Object.keys(reactDom) },
 			extensions: ['.js', '.ts', '.jsx', '.tsx'],
 		}),
 	],
