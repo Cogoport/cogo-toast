@@ -1,7 +1,7 @@
 {
 	"name": "cogo-toast",
 	"description": "Beautiful, Zero Configuration, Toast Messages - Built with React",
-	"version": "4.1.3",
+	"version": "4.2.0",
 	"license": "MIT",
 	"scripts": {
 		"setup": "pnpm install && cd docs && pnpm install",
@@ -11,9 +11,9 @@
 		"dev": "concurrently --kill-others-on-fail \"pnpm run dev-npm\" \"pnpm run dev-docs\"",
 		"build": "rollup -c",
 		"minify-cjs": "uglifyjs --compress --mangle -o dist/index.js -- dist/index.js",
-		"minify-es": "terser --compress --mangle -o dist/index.es.js -- dist/index.es.js",
+		"minify-es": "terser --compress --mangle --comments /$^/ -o dist/index.es.js -- dist/index.es.js",
 		"minify": "concurrently --kill-others-on-fail \"pnpm run minify-cjs\" \"pnpm run minify-es\"",
-		"postbuild": "pnpm minify",
+		"postbuild": "pnpm run minify",
 		"predeploy": "cd docs && pnpm install && pnpm run deploy",
 		"deploy": "gh-pages -t -d docs/out"
 	},
@@ -57,9 +57,11 @@
 		"react-dom": "16.12.0",
 		"react-scripts": "3.3.0",
 		"rollup": "^1.28.0",
+		"rollup-plugin-peer-deps-external": "^2.2.0",
 		"rollup-plugin-postcss": "2.0.3",
 		"terser": "4.6.1",
-		"typescript": "^3.7.4"
+		"typescript": "^3.7.4",
+		"uglify-js": "^3.7.4"
 	},
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",

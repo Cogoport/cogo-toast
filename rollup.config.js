@@ -1,10 +1,14 @@
 import commonjs from '@rollup/plugin-commonjs';
+import external from 'rollup-plugin-peer-deps-external';
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import url from '@rollup/plugin-url';
 import postcss from 'rollup-plugin-postcss';
 
 import svgr from '@svgr/rollup';
+
+import react from 'react';
+import reactDom from 'react-dom';
 
 import pkg from './package.json';
 
@@ -15,12 +19,19 @@ const config = {
 		{ file: pkg.module, format: 'es', exports: 'named', sourcemap: false },
 	],
 	plugins: [
+		external(),
 		postcss({}),
 		url({ exclude: ['**/*.svg'] }),
 		svgr(),
 		resolve(),
 		typescript({ lib: ['es5', 'es6', 'dom'], target: 'es5' }),
-		commonjs({ extensions: ['.js', '.ts', '.jsx', '.tsx'] }),
+		commonjs({
+			namedExports: {
+				react: Object.keys(react),
+				'react-dom': Object.keys(reactDom),
+			},
+			extensions: ['.js', '.ts', '.jsx', '.tsx'],
+		}),
 	],
 };
 

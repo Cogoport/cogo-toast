@@ -33,9 +33,11 @@ devDependencies:
   react-dom: 16.12.0_react@16.12.0
   react-scripts: 3.3.0_typescript@3.7.4
   rollup: 1.28.0
+  rollup-plugin-peer-deps-external: 2.2.0_rollup@1.28.0
   rollup-plugin-postcss: 2.0.3
   terser: 4.6.1
   typescript: 3.7.4
+  uglify-js: 3.7.4
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.5.5:
@@ -10770,6 +10772,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ii4iagi25WusVoiC4B4lq7pbXfAp3D9v5CwfkY33vffw2+pkDjY1D8GaN7spsxvCSx8dkPqOZCEZyfxcmJG2IA==
+  /rollup-plugin-peer-deps-external/2.2.0_rollup@1.28.0:
+    dependencies:
+      rollup: 1.28.0
+    dev: true
+    peerDependencies:
+      rollup: ^0.x
+    resolution:
+      integrity: sha512-BmJMHUWQcvjS2dQMwJ7dzvdbwpRChnq4AYk2sTU/4aySt9Kumk8y8W3HhTHss31wxzKb0AC/wsiX1AqDcOBIEA==
   /rollup-plugin-postcss/2.0.3:
     dependencies:
       chalk: 2.4.2
@@ -11984,7 +11994,6 @@ packages:
     engines:
       node: '>=0.8.0'
     hasBin: true
-    optional: true
     resolution:
       integrity: sha512-tinYWE8X1QfCHxS1lBS8yiDekyhSXOO6R66yNOCdUJeojxxw+PX2BHAz/BWyW7PQ7pkiWVxJfIEbiDxyLWvUGg==
   /unicode-canonical-property-names-ecmascript/1.0.4:
@@ -12794,6 +12803,8 @@ specifiers:
   react-dom: 16.12.0
   react-scripts: 3.3.0
   rollup: ^1.28.0
+  rollup-plugin-peer-deps-external: ^2.2.0
   rollup-plugin-postcss: 2.0.3
   terser: 4.6.1
   typescript: ^3.7.4
+  uglify-js: ^3.7.4
