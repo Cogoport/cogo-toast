@@ -1,46 +1,44 @@
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import external from 'rollup-plugin-peer-deps-external';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
+import resolve from '@rollup/plugin-node-resolve';
+import url from '@rollup/plugin-url';
 import postcss from 'rollup-plugin-postcss';
-import resolve from 'rollup-plugin-node-resolve';
-import url from 'rollup-plugin-url';
 import svgr from '@svgr/rollup';
 
 import pkg from './package.json';
 
-export default [
-	{
-		input: 'src/index.js',
-		output: [
-			{
-				file: pkg.main,
-				format: 'cjs',
-				sourcemap: false,
-				exports: 'named',
-				globals: {
-					react: 'React',
-					'react-dom': 'ReactDOM',
-				},
+const config = {
+	input: 'src/index.tsx',
+	output: [
+		{
+			file: pkg.main,
+			format: 'cjs',
+			exports: 'named',
+			sourcemap: false,
+			globals: {
+				react: 'React',
+				'react-dom': 'ReactDOM',
 			},
-			{
-				file: pkg.module,
-				format: 'es',
-				sourcemap: false,
-				exports: 'named',
-				globals: {
-					react: 'React',
-					'react-dom': 'ReactDOM',
-				},
+		},
+		{
+			file: pkg.module,
+			format: 'es',
+			exports: 'named',
+			sourcemap: false,
+			globals: {
+				react: 'React',
+				'react-dom': 'ReactDOM',
 			},
-		],
-		plugins: [
-			external(),
-			postcss({}),
-			url({ exclude: ['**/*.svg'] }),
-			svgr(),
-			babel({ exclude: 'node_modules/**' }),
-			resolve(),
-			commonjs(),
-		],
-	},
-];
+		},
+	],
+	plugins: [
+		postcss({}),
+		url({ exclude: ['**/*.svg'] }),
+		svgr(),
+		resolve(),
+		typescript({ jsx: 'preserve', module: 'CommonJS' }),
+		commonjs({ extensions: ['.js', '.ts', '.jsx', '.tsx'] }),
+	],
+};
+
+export default config;

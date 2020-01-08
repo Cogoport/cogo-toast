@@ -1,10 +1,17 @@
 {
-	"parser": "babel-eslint",
-	"plugins": ["react", "jsx-a11y", "import", "react-hooks"],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": ["@typescript-eslint", "react", "jsx-a11y", "import", "react-hooks"],
 	"extends": ["airbnb", "plugin:prettier/recommended", "prettier/react", "prettier/standard"],
 	"env": { "browser": true },
 	"rules": {
+		"@typescript-eslint/indent": ["warn", "tab", { "SwitchCase": 1 }],
+		"@typescript-eslint/no-explicit-any": "off",
 		"indent": ["warn", "tab", { "SwitchCase": 1 }],
+		"class-methods-use-this": "off",
 		"prettier/prettier": "error",
 		"no-underscore-dangle": "off",
 		"no-cond-assign": "off",
@@ -12,22 +19,26 @@
 		"no-tabs": "off",
 		"eqeqeq": "warn",
 		"camelcase": "off",
+		"import/extensions": "off",
 		"import/no-extraneous-dependencies": "off",
 		"import/prefer-default-export": "off",
+		"react/destructuring-assignment": "off",
 		"react/jsx-props-no-spreading": "off",
 		"react/jsx-indent": ["error", "tab"],
 		"react/jsx-indent-props": ["error", "tab"],
 		"react/no-array-index-key": "warn",
 		"react/jsx-one-expression-per-line": "off",
-		"react/jsx-filename-extension": [1, { "extensions": [".jsx"] }],
+		"react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
+		"react/static-property-placement": "off",
 		"jsx-a11y/mouse-events-have-key-events": "off",
 		"jsx-a11y/media-has-caption": "off",
 		"jsx-a11y/anchor-is-valid": "off"
 	},
 	"settings": {
-		"import/extensions": [".js", ".jsx"],
+		"import/extensions": [".js", ".jsx", ".ts", ".tsx", ".json"],
+		"import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
 		"import/resolver": {
-			"node": { "extensions": [".js", ".jsx"] }
+			"node": { "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"] }
 		}
 	}
 }

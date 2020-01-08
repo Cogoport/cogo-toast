@@ -1,0 +1,21 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "message": {
+      "errno": 1,
+      "code": "ELIFECYCLE",
+      "pkgid": "cogo-toast@4.1.3",
+      "stage": "build",
+      "script": "rollup -c",
+      "pkgname": "cogo-toast"
+    },
+    "err": {
+      "name": "Error",
+      "message": "cogo-toast@4.1.3 build: `rollup -c`\nExit status 1",
+      "code": "ELIFECYCLE",
+      "stack": "Error: cogo-toast@4.1.3 build: `rollup -c`\nExit status 1\n    at EventEmitter.<anonymous> (/Users/anmolmahatpurkar/.nvm/versions/node/v12.14.0/lib/node_modules/pnpm/lib/node_modules/@zkochan/npm-lifecycle/index.js:302:16)\n    at EventEmitter.emit (events.js:210:5)\n    at ChildProcess.<anonymous> (/Users/anmolmahatpurkar/.nvm/versions/node/v12.14.0/lib/node_modules/pnpm/lib/node_modules/@zkochan/npm-lifecycle/lib/spawn.js:55:14)\n    at ChildProcess.emit (events.js:210:5)\n    at maybeClose (internal/child_process.js:1021:16)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:283:5)"
+    }
+  }
+}
