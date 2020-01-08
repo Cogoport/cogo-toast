@@ -1,6 +1,6 @@
 ### Features
 
-- 4.2.0
+- 4.2.0-beta.0
 
   - Refactored entire codebase to TypeScript. 
   - Switched from yarn to pnpm to manage package dependencies.
