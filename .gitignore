@@ -22,3 +22,5 @@ yarn-error.log*
 
 docs/.next/
 docs/out/
+
+pnpm-debug.log
