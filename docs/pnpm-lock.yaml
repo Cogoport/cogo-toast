@@ -3,12 +3,16 @@ dependencies:
   '@emotion/styled': 10.0.27_2c5d77e899508087ed51e7755add9fe3
   babel-plugin-emotion: 10.0.27
   cogo-toast: 'link:..'
-  next: 9.1.7_react-dom@16.12.0+react@16.12.0
+  next: 9.1.7_727e55409c51e4668fd8ce6c10d18575
   prism-react-renderer: 1.0.2_react@16.12.0
   react: 16.12.0
   react-dom: 16.12.0_react@16.12.0
 devDependencies:
+  '@types/node': 13.1.4
+  '@types/react': 16.9.17
+  '@types/react-dom': 16.9.4
   serve: 11.3.0
+  typescript: 3.7.4
 lockfileVersion: 5.1
 packages:
   /@ampproject/toolbox-core/1.1.1:
@@ -1085,10 +1089,31 @@ packages:
     dev: false
     resolution:
       integrity: sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
+  /@types/node/13.1.4:
+    dev: true
+    resolution:
+      integrity: sha512-Lue/mlp2egZJoHXZr4LndxDAd7i/7SQYhV0EjWfb/a4/OZ6tuVwMCVPiwkU5nsEipxEf7hmkSU7Em5VQ8P5NGA==
   /@types/parse-json/4.0.0:
     dev: false
     resolution:
       integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
+  /@types/prop-types/15.7.3:
+    dev: true
+    resolution:
+      integrity: sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+  /@types/react-dom/16.9.4:
+    dependencies:
+      '@types/react': 16.9.17
+    dev: true
+    resolution:
+      integrity: sha512-fya9xteU/n90tda0s+FtN5Ym4tbgxpq/hb/Af24dvs6uYnYn+fspaxw5USlw0R8apDNwxsqumdRoCoKitckQqw==
+  /@types/react/16.9.17:
+    dependencies:
+      '@types/prop-types': 15.7.3
+      csstype: 2.6.8
+    dev: true
+    resolution:
+      integrity: sha512-UP27In4fp4sWF5JgyV6pwVPAQM83Fj76JOcg02X5BZcpSu5Wx+fP9RMqc2v0ssBoQIFvD5JdKY41gjJJKmw6Bg==
   /@webassemblyjs/ast/1.8.5:
     dependencies:
       '@webassemblyjs/helper-module-context': 1.8.5
@@ -2351,7 +2376,6 @@ packages:
     resolution:
       integrity: sha512-B7u9vvtXEqeU2rzdt+Kfw5O9Nd46R7KNjJoP7Y5lGQs6c7n1Et5Ilofh2W9OjBV/ZiJV5+7j9ShWgiYNtH/57A==
   /csstype/2.6.8:
-    dev: false
     resolution:
       integrity: sha512-msVS9qTuMT5zwAGCVm4mxfrZ18BNc6Csd0oJAtiFMZ1FAx1CCvy2+5MDmYoix63LM/6NDbNtodCiGYGmFgO0dA==
   /cyclist/1.0.1:
@@ -3938,7 +3962,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
-  /next/9.1.7_react-dom@16.12.0+react@16.12.0:
+  /next/9.1.7_727e55409c51e4668fd8ce6c10d18575:
     dependencies:
       '@ampproject/toolbox-optimizer': 1.1.1_lru-cache@5.1.1
       '@babel/core': 7.7.2
@@ -3996,7 +4020,7 @@ packages:
       object-assign: 4.1.1
       ora: 3.4.0
       path-to-regexp: 6.1.0
-      pnp-webpack-plugin: 1.5.0
+      pnp-webpack-plugin: 1.5.0_typescript@3.7.4
       postcss-flexbugs-fixes: 4.1.0
       postcss-loader: 3.0.0
       postcss-preset-env: 6.7.0
@@ -4032,6 +4056,7 @@ packages:
     peerDependencies:
       react: ^16.6.0
       react-dom: ^16.6.0
+      typescript: '*'
     resolution:
       integrity: sha512-qG6TsPl7ANuNPFhKq/1Pd4pAf24QCmUAjc0P8qYrSSsbwNIco1KNNXOyZajV/YlqBjBy/fCrZoErKK3zEUVz6w==
   /node-fetch/2.6.0:
@@ -4501,12 +4526,14 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
-  /pnp-webpack-plugin/1.5.0:
+  /pnp-webpack-plugin/1.5.0_typescript@3.7.4:
     dependencies:
-      ts-pnp: 1.1.5
+      ts-pnp: 1.1.5_typescript@3.7.4
     dev: false
     engines:
       node: '>=6'
+    peerDependencies:
+      typescript: '*'
     resolution:
       integrity: sha512-jd9olUr9D7do+RN8Wspzhpxhgp1n6Vd0NtQ4SFkmIACZoEL1nkyAdW9Ygrinjec0vgDcWjscFQQ1gDW8rsfKTg==
   /posix-character-classes/0.1.1:
@@ -5913,7 +5940,9 @@ packages:
     dev: false
     resolution:
       integrity: sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
-  /ts-pnp/1.1.5:
+  /ts-pnp/1.1.5_typescript@3.7.4:
+    dependencies:
+      typescript: 3.7.4
     dev: false
     engines:
       node: '>=6'
@@ -5942,6 +5971,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+  /typescript/3.7.4:
+    engines:
+      node: '>=4.2.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-A25xv5XCtarLwXpcDNZzCGvW2D1S3/bACratYBx2sax8PefsFhlYmkQicKHvpYflFS8if4zne5zT5kpJ7pzuvw==
   /unfetch/4.1.0:
     dev: false
     resolution:
@@ -6274,6 +6309,9 @@ packages:
 specifiers:
   '@emotion/core': 10.0.27
   '@emotion/styled': 10.0.27
+  '@types/node': ^13.1.4
+  '@types/react': ^16.9.17
+  '@types/react-dom': ^16.9.4
   babel-plugin-emotion: 10.0.27
   cogo-toast: 'link:../'
   next: ^9.1.7
@@ -6281,3 +6319,4 @@ specifiers:
   react: ^16.12.0
   react-dom: ^16.12.0
   serve: 11.3.0
+  typescript: 3.7.4

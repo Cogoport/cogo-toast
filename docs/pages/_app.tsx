@@ -3,7 +3,7 @@ import App from 'next/app';
 import Head from 'next/head';
 
 import Meta from '../components/Meta';
-import GlobalStyles from '../components/Global-Styles';
+import GlobalStyles from '../components/GlobalStyles';
 
 class MyApp extends App {
 	static async getInitialProps({ Component, ctx }) {
