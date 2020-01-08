@@ -9,7 +9,7 @@ class MyApp extends App {
 	static async getInitialProps({ Component, ctx }) {
 		const { asPath, query = {} } = ctx;
 
-		const initialProps = Component.getInitialProps
+		const initialProps = Component?.getInitialProps
 			? await Component.getInitialProps({ ...ctx })
 			: {};
 		const pageProps = { pathname: asPath, query, ...(initialProps || {}) };

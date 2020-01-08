@@ -3,12 +3,12 @@ import { MouseEventHandler } from 'react';
 export type CTOptions = Partial<{
 	hideAfter: number;
 	position:
-		| 'top-left'
-		| 'top-center'
-		| 'top-right'
-		| 'bottom-left'
-		| 'bottom-center'
-		| 'bottom-right';
+	| 'top-left'
+	| 'top-center'
+	| 'top-right'
+	| 'bottom-left'
+	| 'bottom-center'
+	| 'bottom-right';
 	heading: string;
 	role: string;
 	toastContainerID: string;

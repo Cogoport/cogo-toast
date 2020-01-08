@@ -8,6 +8,7 @@ devDependencies:
   '@rollup/plugin-url': 4.0.1_rollup@1.28.0
   '@svgr/rollup': 5.0.1
   '@types/jest': 24.0.25
+  '@types/prop-types': 15.7.3
   '@types/react': 16.9.17
   '@types/react-dom': 16.9.4
   '@typescript-eslint/eslint-plugin': 2.15.0_17206d85cb7d94075d48587653b09c73
@@ -12781,6 +12782,7 @@ specifiers:
   '@rollup/plugin-url': ^4.0.1
   '@svgr/rollup': 5.0.1
   '@types/jest': ^24.0.25
+  '@types/prop-types': ^15.7.3
   '@types/react': ^16.9.17
   '@types/react-dom': ^16.9.4
   '@typescript-eslint/eslint-plugin': ^2.15.0
