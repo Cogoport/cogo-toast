@@ -10,20 +10,20 @@
 		"deploy": "rm -rf node_modules/.cache && yarn run export && touch out/.nojekyll"
 	},
 	"dependencies": {
-		"@emotion/core": "10.0.27",
+		"@emotion/core": "10.0.28",
 		"@emotion/styled": "10.0.27",
-		"babel-plugin-emotion": "10.0.27",
+		"babel-plugin-emotion": "10.0.33",
 		"cogo-toast": "link:../",
-		"next": "^9.2.1",
-		"prism-react-renderer": "^1.0.2",
-		"react": "^16.12.0",
-		"react-dom": "^16.12.0"
+		"next": "^9.3.5",
+		"prism-react-renderer": "^1.1.0",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
 	},
 	"devDependencies": {
-    "@types/node": "^13.7.1",
-    "@types/react": "^16.9.20",
-    "@types/react-dom": "^16.9.5",
-    "typescript": "3.7.5",
+    "@types/node": "^13.13.4",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "typescript": "3.8.3",
 		"serve": "11.3.0"
 	}
 }
