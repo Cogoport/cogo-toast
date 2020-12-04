@@ -9,6 +9,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	pointer-events: none;
+	overflow: hidden;
 }
 
 .ct-row {
