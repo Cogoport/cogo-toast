@@ -20,6 +20,7 @@ type CToastItem = {
 	type: string;
 	hideAfter: number;
 	onClick: any;
+	onHide: any;
 };
 
 type CToastContainerProps = Partial<{
@@ -41,15 +42,18 @@ const ToastContainer: React.FC<CToastContainerProps> = ({ toast, hiddenID }) => 
 		}
 	}, [toast]);
 
-	const handleRemove = (id: number, position: string) => {
-		setToasts((prevToasts) => {
-			const toastPosition = camelCase(position || 'top-center');
-			return {
-				...prevToasts,
-				[toastPosition]: prevToasts[toastPosition].filter((item: CToastItem) => item.id !== id),
-			};
-		});
-	};
+	const handleRemove = (callback) => {
+		return (id: number, position: string) => {
+			setToasts((prevToasts) => {
+				const toastPosition = camelCase(position || 'top-center');
+				return {
+					...prevToasts,
+					[toastPosition]: prevToasts[toastPosition].filter((item: CToastItem) => item.id !== id),
+				};
+			});
+			typeof callback === 'function' && callback(id, position);
+		};
+	}
 
 	const rows = ['top', 'bottom'];
 	const groups = ['Left', 'Center', 'Right'];
@@ -73,7 +77,7 @@ const ToastContainer: React.FC<CToastContainerProps> = ({ toast, hiddenID }) => 
 										onClick={item.onClick}
 										hideAfter={item.hideAfter}
 										show={hiddenID !== item.id}
-										onHide={handleRemove}
+										onHide={handleRemove(item.onHide)}
 									/>
 								))}
 							</div>
